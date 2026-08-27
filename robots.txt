@@ -1,0 +1,6 @@
+# robots.txt for iA Tech
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://iatech.com.br/sitemap.xml
