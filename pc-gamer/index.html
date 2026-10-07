@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC Gamer, aprenda tudo sobre as peças, sua importancia para o setup, compatibilidade. Como escolher a melhor configuração para seu orçamento, e como montar você mesmo — NavDoc Web</title>
+  <meta name="description" content="Curso interativo estruturado com lições em Markdown, apresentações em slides e quizzes avaliativos." />
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div id="app-container" class="app-layout">
+    <!-- Barra Superior -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button id="btnToggleSidebar" class="icon-btn" title="Alternar Menu Lateral" aria-label="Menu Lateral">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="brand-info">
+          <span class="brand-badge">NAVDOC WEB</span>
+          <h1 id="topCourseTitle" class="course-main-title">PC Gamer, aprenda tudo sobre as peças, sua importancia para o setup, compatibilidade. Como escolher a melhor configuração para seu orçamento, e como montar você mesmo</h1>
+        </div>
+      </div>
+
+      <div class="topbar-center">
+        <div class="breadcrumbs" id="breadcrumbs">
+          <span class="crumb-chapter">Carregando...</span>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-lesson">Selecione uma lição</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="progress-container" title="Progresso geral do curso">
+          <div class="progress-bar-bg">
+            <div id="overallProgressBar" class="progress-bar-fill" style="width: 0%"></div>
+          </div>
+          <span id="overallProgressText" class="progress-text">0%</span>
+        </div>
+
+        <button id="btnThemeToggle" class="icon-btn" title="Alternar Tema Claro/Escuro" aria-label="Tema">
+          <svg id="themeIconSun" class="theme-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="themeIconMoon" class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="main-body">
+      <!-- Menu Lateral -->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="lessonSearchInput" placeholder="Buscar lição ou tópico..." />
+            <button id="btnClearSearch" class="clear-btn hidden" title="Limpar busca">&times;</button>
+          </div>
+          <div class="sidebar-stats">
+            <span id="sidebarStatsText">0 Capítulos • 0 Lições</span>
+          </div>
+        </div>
+
+        <nav id="sidebarNav" class="sidebar-nav">
+          <!-- Injetado dinamicamente -->
+        </nav>
+      </aside>
+
+      <!-- Área de Leitura Principal -->
+      <main id="contentArea" class="content-area">
+        <div class="content-wrapper">
+          <!-- Barra de Ações Rápidas da Lição -->
+          <div id="lessonActionToolbar" class="lesson-action-toolbar hidden">
+            <div class="lesson-meta-info">
+              <span id="lessonChapterBadge" class="chapter-badge">Capítulo 1</span>
+              <span id="lessonReadingTime" class="read-time-badge">⏱️ ~5 min de leitura</span>
+            </div>
+            <div class="action-buttons-group">
+              <button id="btnOpenPresentation" class="action-btn btn-presentation hidden">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <span>Ver Apresentação (Slides)</span>
+              </button>
+              <button id="btnOpenQuiz" class="action-btn btn-quiz hidden">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <span>Fazer Quiz</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Artigo com conteúdo Markdown -->
+          <article id="articleContent" class="markdown-body">
+            <div class="welcome-screen">
+              <h2>Bem-vindo ao Curso!</h2>
+              <p>Selecione uma lição no menu lateral para iniciar sua leitura e estudos.</p>
+            </div>
+          </article>
+
+          <!-- Navegação Inferior (Anterior / Concluído / Próxima) -->
+          <footer id="lessonFooterNav" class="lesson-footer-nav hidden">
+            <button id="btnPrevLesson" class="nav-lesson-btn prev">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <div class="btn-text-block">
+                <span class="btn-sub">Lição Anterior</span>
+                <span id="prevLessonTitle" class="btn-title">-</span>
+              </div>
+            </button>
+
+            <button id="btnToggleComplete" class="complete-lesson-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span id="btnToggleCompleteText">Concluir Lição</span>
+            </button>
+
+            <button id="btnNextLesson" class="nav-lesson-btn next">
+              <div class="btn-text-block text-right">
+                <span class="btn-sub">Próxima Lição</span>
+                <span id="nextLessonTitle" class="btn-title">-</span>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal de Apresentação (Slides) -->
+  <div id="slidesModal" class="modal-overlay hidden">
+    <div class="modal-container slides-container">
+      <div class="slides-header">
+        <div class="slides-header-left">
+          <span class="slides-badge">APRESENTAÇÃO</span>
+          <h3 id="slidesModalTitle" class="slides-title">Slide 1</h3>
+        </div>
+        <div class="slides-header-right">
+          <span id="slidesCounter" class="slides-counter">1 / 1</span>
+          <button id="btnCloseSlides" class="icon-btn" title="Fechar Apresentação (Esc)">&times;</button>
+        </div>
+      </div>
+
+      <div class="slides-viewport">
+        <div id="slidesBody" class="slides-body">
+          <!-- Slide Atual Renderizado -->
+        </div>
+      </div>
+
+      <div class="slides-footer">
+        <button id="btnPrevSlide" class="slide-nav-btn" title="Slide Anterior (←)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Anterior
+        </button>
+
+        <div class="slide-indicator-dots" id="slideDots">
+          <!-- Pontos dos slides -->
+        </div>
+
+        <button id="btnNextSlide" class="slide-nav-btn" title="Próximo Slide (→)">
+          Próximo
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal do Quiz Interativo -->
+  <div id="quizModal" class="modal-overlay hidden">
+    <div class="modal-container quiz-container">
+      <div class="quiz-header">
+        <div class="quiz-header-left">
+          <span class="quiz-badge">QUIZ INTERATIVO</span>
+          <h3 id="quizModalTitle" class="quiz-title">Avaliação da Lição</h3>
+        </div>
+        <button id="btnCloseQuiz" class="icon-btn" title="Fechar Quiz">&times;</button>
+      </div>
+
+      <div class="quiz-body-scroll">
+        <form id="quizForm" class="quiz-form">
+          <div id="quizQuestionsContainer" class="quiz-questions">
+            <!-- Questões Injetadas Dinamicamente -->
+          </div>
+
+          <div class="quiz-actions">
+            <button type="submit" id="btnSubmitQuiz" class="quiz-submit-btn">
+              Verificar Respostas
+            </button>
+            <button type="button" id="btnResetQuiz" class="quiz-reset-btn hidden">
+              Refazer Quiz
+            </button>
+          </div>
+        </form>
+
+        <div id="quizScoreBanner" class="quiz-score-banner hidden">
+          <div class="score-circle">
+            <span id="quizScorePercent">0%</span>
+          </div>
+          <div class="score-details">
+            <h4 id="quizScoreHeadline">Resultado do Quiz</h4>
+            <p id="quizScoreMessage">Você acertou 0 de 0 questões.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carregamento de dados e motor da aplicação -->
+  <script src="./course-data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

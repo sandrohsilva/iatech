@@ -1,0 +1,393 @@
+{
+  "titulo_livro": "PC Gamer, aprenda tudo sobre as peças, sua importancia para o setup, compatibilidade. Como escolher a melhor configuração para seu orçamento, e como montar você mesmo",
+  "gerado_em": "2026-10-07T16:55:29.826Z",
+  "total_capitulos": 8,
+  "total_licoes": 40,
+  "total_palavras": 145012,
+  "capitulos": [
+    {
+      "ordem": 1,
+      "pasta": "1. Introducao ao PC Gamer e o Processador (CPU)",
+      "titulo": "Introducao ao PC Gamer e o Processador (CPU)",
+      "descricao": "Compreender a arquitetura geral de um computador moderno focado em jogos e dominar o funcionamento, nomenclatura e importância da CPU na performance geral do setup.",
+      "licoes": [
+        {
+          "ordem": 1,
+          "slug": "introducao-a-arquitetura-x86-e-a-evolucao-dos-pcs-de-jogos",
+          "arquivo": "01-introducao-a-arquitetura-x86-e-a-evolucao-dos-pcs-de-jogos.md",
+          "titulo": "Introducao a arquitetura x86 e a evolucao dos PCs de jogos",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 2,
+          "slug": "o-papel-do-processador-cpu-no-processamento-logico-e-de-fisi",
+          "arquivo": "02-o-papel-do-processador-cpu-no-processamento-logico-e-de-fisi.md",
+          "titulo": "O papel do Processador (CPU) no processamento logico e de fisica",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 3,
+          "slug": "entendendo-cores-threads-clock-base-e-turbo-boost",
+          "arquivo": "03-entendendo-cores-threads-clock-base-e-turbo-boost.md",
+          "titulo": "Entendendo Cores, Threads, Clock Base e Turbo Boost",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 4,
+          "slug": "sockets-chipsets-e-compatibilidade-entre-geracoes-da-intel-e",
+          "arquivo": "04-sockets-chipsets-e-compatibilidade-entre-geracoes-da-intel-e.md",
+          "titulo": "Sockets, Chipsets e compatibilidade entre geracoes da Intel e AMD",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 5,
+          "slug": "como-interpretar-especificacoes-tecnicas-e-benchmarks-de-cpu",
+          "arquivo": "05-como-interpretar-especificacoes-tecnicas-e-benchmarks-de-cpu.md",
+          "titulo": "Como interpretar especificacoes tecnicas e benchmarks de CPUs",
+          "has_presentation": true,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "ordem": 2,
+      "pasta": "2. Placa de Video (GPU) - O Coracao Grafico",
+      "titulo": "Placa de Video (GPU) - O Coracao Grafico",
+      "descricao": "Dominar o funcionamento das placas de video, sua tecnologia embarcada, taxas de quadros e como escolher o modelo ideal para cada tipo de monitor e jogo.",
+      "licoes": [
+        {
+          "ordem": 1,
+          "slug": "como-a-gpu-renderiza-graficos-3d-em-tempo-real",
+          "arquivo": "01-como-a-gpu-renderiza-graficos-3d-em-tempo-real.md",
+          "titulo": "Como a GPU renderiza graficos 3D em tempo real",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 2,
+          "slug": "nvidia-vs-amd-vs-intel-arquiteturas-e-ecossistemas",
+          "arquivo": "02-nvidia-vs-amd-vs-intel-arquiteturas-e-ecossistemas.md",
+          "titulo": "NVIDIA vs AMD vs Intel: Arquiteturas e ecossistemas",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 3,
+          "slug": "memoria-de-video-vram-capacidade-largura-de-banda-e-barramen",
+          "arquivo": "03-memoria-de-video-vram-capacidade-largura-de-banda-e-barramen.md",
+          "titulo": "Memoria de Video (VRAM): Capacidade, largura de banda e barramento",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 4,
+          "slug": "tecnologias-de-up-scaling-e-geracao-de-quadros-dlss-fsr-e-xe",
+          "arquivo": "04-tecnologias-de-up-scaling-e-geracao-de-quadros-dlss-fsr-e-xe.md",
+          "titulo": "Tecnologias de Up-scaling e Geracao de Quadros: DLSS, FSR e XeSS",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 5,
+          "slug": "ray-tracing-rasterizacao-e-resolucoes-de-tela-1080p-1440p-4k",
+          "arquivo": "05-ray-tracing-rasterizacao-e-resolucoes-de-tela-1080p-1440p-4k.md",
+          "titulo": "Ray Tracing, Rasterizacao e resolucoes de tela (1080p, 1440p, 4K)",
+          "has_presentation": true,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "ordem": 3,
+      "pasta": "3. Memoria RAM, Armazenamento e Placa-Mae",
+      "titulo": "Memoria RAM, Armazenamento e Placa-Mae",
+      "descricao": "Compreender a sinergia entre a placa-mae, o barramento de comunicacao e a velocidade de leitura e gravacao das memorias no desempenho dos jogos.",
+      "licoes": [
+        {
+          "ordem": 1,
+          "slug": "formatos-de-placa-mae-atx-micro-atx-mini-itx-e-suas-conexoes",
+          "arquivo": "01-formatos-de-placa-mae-atx-micro-atx-mini-itx-e-suas-conexoes.md",
+          "titulo": "Formatos de Placa-Mae: ATX, Micro-ATX, Mini-ITX e suas conexoes",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 2,
+          "slug": "memoria-ram-frequencia-latencia-cas-cl-e-a-importancia-do-du",
+          "arquivo": "02-memoria-ram-frequencia-latencia-cas-cl-e-a-importancia-do-du.md",
+          "titulo": "Memoria RAM: Frequencia, Latencia CAS (CL) e a importancia do Dual Channel",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 3,
+          "slug": "ddr4-vs-ddr5-diferencas-de-performance-e-compatibilidade-fis",
+          "arquivo": "03-ddr4-vs-ddr5-diferencas-de-performance-e-compatibilidade-fis.md",
+          "titulo": "DDR4 vs DDR5: Diferencas de performance e compatibilidade fisica",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 4,
+          "slug": "armazenamento-de-alta-velocidade-ssds-sata-vs-nvme-m-2-pcie",
+          "arquivo": "04-armazenamento-de-alta-velocidade-ssds-sata-vs-nvme-m-2-pcie.md",
+          "titulo": "Armazenamento de Alta Velocidade: SSDs SATA vs NVMe M.2 (PCIe 3.0, 4.0 e 5.0)",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 5,
+          "slug": "entendendo-barramentos-pcie-lanes-e-sua-distribuicao-na-plac",
+          "arquivo": "05-entendendo-barramentos-pcie-lanes-e-sua-distribuicao-na-plac.md",
+          "titulo": "Entendendo barramentos PCIe, lanes e sua distribuicao na placa-mae",
+          "has_presentation": true,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "ordem": 4,
+      "pasta": "4. Alimentacao e Refrigeracao (Energia e Temperatura)",
+      "titulo": "Alimentacao e Refrigeracao (Energia e Temperatura)",
+      "descricao": "Dimensionar a fonte de alimentacao correta para o sistema e planejar o sistema de arrefecimento para garantir estabilidade e vida util das pecas.",
+      "licoes": [
+        {
+          "ordem": 1,
+          "slug": "dimensionamento-de-energia-como-calcular-o-consumo-em-watts",
+          "arquivo": "01-dimensionamento-de-energia-como-calcular-o-consumo-em-watts.md",
+          "titulo": "Dimensionamento de energia: Como calcular o consumo em Watts de um setup",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 2,
+          "slug": "fontes-de-alimentacao-psu-certificacao-80-plus-e-tipos-de-ca",
+          "arquivo": "02-fontes-de-alimentacao-psu-certificacao-80-plus-e-tipos-de-ca.md",
+          "titulo": "Fontes de Alimentacao (PSU): Certificacao 80 Plus e tipos de cabeamento",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 3,
+          "slug": "air-cooler-vs-water-cooler-funcionamento-durabilidade-e-dese",
+          "arquivo": "03-air-cooler-vs-water-cooler-funcionamento-durabilidade-e-dese.md",
+          "titulo": "Air Cooler vs Water Cooler: Funcionamento, durabilidade e desempenho",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 4,
+          "slug": "pressao-de-ar-no-gabinete-pressao-positiva-negativa-e-neutra",
+          "arquivo": "04-pressao-de-ar-no-gabinete-pressao-positiva-negativa-e-neutra.md",
+          "titulo": "Pressao de Ar no Gabinete: Pressao Positiva, Negativa e Neutra",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 5,
+          "slug": "planejamento-de-fluxo-de-ar-airflow-e-organizacao-das-ventoi",
+          "arquivo": "05-planejamento-de-fluxo-de-ar-airflow-e-organizacao-das-ventoi.md",
+          "titulo": "Planejamento de fluxo de ar (airflow) e organizacao das ventoinhas (fans)",
+          "has_presentation": true,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "ordem": 5,
+      "pasta": "5. Regras de Compatibilidade e Prevencao de Gargalos",
+      "titulo": "Regras de Compatibilidade e Prevencao de Gargalos",
+      "descricao": "Aprender a cruzar as especificacoes tecnicas de todas as pecas para evitar incompatibilidades fisicas e o efeito gargalo (bottleneck).",
+      "licoes": [
+        {
+          "ordem": 1,
+          "slug": "compatibilidade-fisica-limites-de-tamanho-de-gpu-cooler-e-fo",
+          "arquivo": "01-compatibilidade-fisica-limites-de-tamanho-de-gpu-cooler-e-fo.md",
+          "titulo": "Compatibilidade Fisica: Limites de tamanho de GPU, Cooler e Fonte no Gabinete",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 2,
+          "slug": "compatibilidade-eletrica-e-conectores-eps-pcie-conectores-rg",
+          "arquivo": "02-compatibilidade-eletrica-e-conectores-eps-pcie-conectores-rg.md",
+          "titulo": "Compatibilidade Eletrica e Conectores (EPS, PCIe, conectores RGB/ARGB)",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 3,
+          "slug": "o-gargalo-bottleneck-entre-cpu-e-gpu-e-como-alcancar-o-equil",
+          "arquivo": "03-o-gargalo-bottleneck-entre-cpu-e-gpu-e-como-alcancar-o-equil.md",
+          "titulo": "O Gargalo (Bottleneck) entre CPU e GPU e como alcancar o equilibrio do setup",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 4,
+          "slug": "otimizacao-de-ram-com-perfis-xmp-expo-da-placa-mae",
+          "arquivo": "04-otimizacao-de-ram-com-perfis-xmp-expo-da-placa-mae.md",
+          "titulo": "Otimizacao de RAM com perfis XMP / EXPO da placa-mae",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 5,
+          "slug": "utilizacao-de-ferramentas-digitais-para-simulacao-de-pecas-e",
+          "arquivo": "05-utilizacao-de-ferramentas-digitais-para-simulacao-de-pecas-e.md",
+          "titulo": "Utilizacao de ferramentas digitais para simulacao de pecas e compatibilidade",
+          "has_presentation": true,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "ordem": 6,
+      "pasta": "6. Orcamento Inteligente e Escolha das Pecas",
+      "titulo": "Orcamento Inteligente e Escolha das Pecas",
+      "descricao": "Aprender a gerenciar recursos financeiros para extrair o maximo de performance por real investido no cenario nacional.",
+      "licoes": [
+        {
+          "ordem": 1,
+          "slug": "analise-de-perfil-de-jogador-competitivo-alto-fps-vs-qualida",
+          "arquivo": "01-analise-de-perfil-de-jogador-competitivo-alto-fps-vs-qualida.md",
+          "titulo": "Analise de perfil de jogador: Competitivo (alto FPS) vs Qualidade Visual (Graficos)",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 2,
+          "slug": "como-distribuir-o-orcamento-percentualmente-entre-cada-compo",
+          "arquivo": "02-como-distribuir-o-orcamento-percentualmente-entre-cada-compo.md",
+          "titulo": "Como distribuir o orcamento percentualmente entre cada componente",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 3,
+          "slug": "identificando-pecas-obsoletas-recondicionadas-ou-de-baixa-du",
+          "arquivo": "03-identificando-pecas-obsoletas-recondicionadas-ou-de-baixa-du.md",
+          "titulo": "Identificando pecas obsoletas, recondicionadas ou de baixa durabilidade",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 4,
+          "slug": "pesquisa-de-precos-historicos-garantia-nacional-e-marcas-de",
+          "arquivo": "04-pesquisa-de-precos-historicos-garantia-nacional-e-marcas-de.md",
+          "titulo": "Pesquisa de precos historicos, garantia nacional e marcas de confianca",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 5,
+          "slug": "montando-listas-de-pecas-para-setups-de-entrada-intermediari",
+          "arquivo": "05-montando-listas-de-pecas-para-setups-de-entrada-intermediari.md",
+          "titulo": "Montando listas de pecas para setups de Entrada, Intermediario e High-End",
+          "has_presentation": true,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "ordem": 7,
+      "pasta": "7. Montagem Pratica do PC (O Guia de Construcao)",
+      "titulo": "Montagem Pratica do PC (O Guia de Construcao)",
+      "descricao": "Adquirir a destreza manual e o conhecimento de seguranca necessarios para montar os componentes de forma correta e sem riscos de danos por estatica.",
+      "licoes": [
+        {
+          "ordem": 1,
+          "slug": "ferramentas-necessarias-preparacao-do-ambiente-e-cuidados-co",
+          "arquivo": "01-ferramentas-necessarias-preparacao-do-ambiente-e-cuidados-co.md",
+          "titulo": "Ferramentas necessarias, preparacao do ambiente e cuidados com energia estatica",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 2,
+          "slug": "instalacao-da-cpu-memoria-ram-e-ssd-nvme-na-placa-mae-fora-d",
+          "arquivo": "02-instalacao-da-cpu-memoria-ram-e-ssd-nvme-na-placa-mae-fora-d.md",
+          "titulo": "Instalacao da CPU, Memoria RAM e SSD NVMe na Placa-Mae (fora do gabinete)",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 3,
+          "slug": "como-aplicar-pasta-termica-e-fixar-o-cooler-air-ou-water-cor",
+          "arquivo": "03-como-aplicar-pasta-termica-e-fixar-o-cooler-air-ou-water-cor.md",
+          "titulo": "Como aplicar pasta termica e fixar o cooler (Air ou Water) corretamente",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 4,
+          "slug": "instalacao-de-espacadores-organizacao-de-cabos-cable-managem",
+          "arquivo": "04-instalacao-de-espacadores-organizacao-de-cabos-cable-managem.md",
+          "titulo": "Instalacao de espaçadores, organizacao de cabos (cable management) e fixacao da placa-mae",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 5,
+          "slug": "montagem-da-placa-de-video-gpu-e-conexao-final-de-todos-os-c",
+          "arquivo": "05-montagem-da-placa-de-video-gpu-e-conexao-final-de-todos-os-c.md",
+          "titulo": "Montagem da Placa de Video (GPU) e conexao final de todos os cabos de forca",
+          "has_presentation": true,
+          "has_quiz": true
+        }
+      ]
+    },
+    {
+      "ordem": 8,
+      "pasta": "8. Primeiro Boot, Configuracao de BIOS e Otimizacao",
+      "titulo": "Primeiro Boot, Configuracao de BIOS e Otimizacao",
+      "descricao": "Realizar a primeira inicializacao, configurar os parametros fundamentais do sistema na BIOS e instalar o sistema operacional de forma limpa.",
+      "licoes": [
+        {
+          "ordem": 1,
+          "slug": "o-primeiro-boot-e-interpretacao-de-leds-de-diagnostico-de-er",
+          "arquivo": "01-o-primeiro-boot-e-interpretacao-de-leds-de-diagnostico-de-er.md",
+          "titulo": "O primeiro boot e interpretacao de LEDs de diagnostico de erro (POST)",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 2,
+          "slug": "navegacao-basica-na-bios-uefi-e-atualizacoes-importantes-de",
+          "arquivo": "02-navegacao-basica-na-bios-uefi-e-atualizacoes-importantes-de.md",
+          "titulo": "Navegacao basica na BIOS/UEFI e atualizacoes importantes de firmware",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 3,
+          "slug": "ativacao-de-perfis-de-performance-xmp-expo-e-ajuste-de-curva",
+          "arquivo": "03-ativacao-de-perfis-de-performance-xmp-expo-e-ajuste-de-curva.md",
+          "titulo": "Ativacao de perfis de performance (XMP/EXPO) e ajuste de curvas de ventoinhas",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 4,
+          "slug": "instalacao-limpa-do-windows-configuracao-de-drivers-de-chips",
+          "arquivo": "04-instalacao-limpa-do-windows-configuracao-de-drivers-de-chips.md",
+          "titulo": "Instalacao limpa do Windows, configuracao de drivers de chipset e GPU",
+          "has_presentation": true,
+          "has_quiz": true
+        },
+        {
+          "ordem": 5,
+          "slug": "testes-de-estresse-do-sistema-e-monitoramento-de-temperatura",
+          "arquivo": "05-testes-de-estresse-do-sistema-e-monitoramento-de-temperatura.md",
+          "titulo": "Testes de estresse do sistema e monitoramento de temperaturas sob carga",
+          "has_presentation": true,
+          "has_quiz": true
+        }
+      ]
+    }
+  ]
+}
