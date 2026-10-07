@@ -57,6 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Trigger from Product Card Button
+  const btnCardCursoPcGamer = document.getElementById('btn-card-curso-pcgamer');
+  if (btnCardCursoPcGamer) {
+    btnCardCursoPcGamer.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCourse();
+    });
+  }
+
   // Trigger from Navbar Link
   if (navCursoLink) {
     navCursoLink.addEventListener('click', (e) => {
