@@ -60,6 +60,7 @@
     btnCloseSlides: document.getElementById('btnCloseSlides'),
 
     quizModal: document.getElementById('quizModal'),
+    quizModalTitle: document.getElementById('quizModalTitle'),
     quizForm: document.getElementById('quizForm'),
     quizQuestionsContainer: document.getElementById('quizQuestionsContainer'),
     btnSubmitQuiz: document.getElementById('btnSubmitQuiz'),
@@ -107,8 +108,9 @@
     localStorage.setItem('navdoc_theme', state.theme);
     initTheme();
 
-    // Re-renderizar Mermaid se presente na licao atual
+    // Re-renderizar Mermaid e Recharts se presentes na licao atual
     renderMermaidBlocks();
+    renderRechartsBlocks();
   }
 
   // ==========================================
@@ -145,7 +147,7 @@
 
       var isChapterActive = state.currentChapterIndex === chIdx;
 
-      html += '<div class="chapter-group ' + (isChapterActive ? '' : 'collapsed') + '" data-chapter-index="' + chIdx + '">';
+      html += '<div class="chapter-group" data-chapter-index="' + chIdx + '">';
       html += '  <div class="chapter-header" data-toggle-chapter="' + chIdx + '">';
       html += '    <span>' + chapter.order + '. ' + chapter.title + '</span>';
       html += '    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>';
@@ -247,6 +249,9 @@
     // Executar Mermaid nos blocos de diagrama
     renderMermaidBlocks();
 
+    // Executar Recharts nos blocos de gráfico
+    renderRechartsBlocks();
+
     // Configurar botoes de copiar codigo
     elements.articleContent.querySelectorAll('.code-copy-btn').forEach(function(btn) {
       btn.addEventListener('click', async function() {
@@ -273,17 +278,276 @@
     if (contentEl) contentEl.scrollTop = 0;
   }
 
-  function renderMermaidBlocks() {
-    if (window.mermaid) {
-      var mermaidNodes = elements.articleContent.querySelectorAll('.mermaid');
-      if (mermaidNodes.length > 0) {
-        try {
-          window.mermaid.run({ nodes: mermaidNodes });
-        } catch (err) {
-          console.warn('Erro ao renderizar Mermaid:', err);
-        }
+  var mermaidCounter = 0;
+  async function renderMermaidBlocks() {
+    if (!window.mermaid) return;
+    var containers = elements.articleContent.querySelectorAll('.mermaid-container');
+    if (!containers || containers.length === 0) return;
+
+    for (var i = 0; i < containers.length; i++) {
+      var container = containers[i];
+      var pre = container.querySelector('pre.mermaid');
+      var rawCode = container.getAttribute('data-mermaid') || (pre ? pre.textContent : '') || '';
+      if (!rawCode.trim()) continue;
+
+      // Limpar aspas escapadas e entidades HTML indesejadas
+      var cleanDef = rawCode
+        .replace(/\"/g, '"')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .trim();
+
+      var id = 'mermaid-chart-' + (++mermaidCounter);
+      try {
+        var res = await window.mermaid.render(id, cleanDef);
+        container.innerHTML = '<div class="mermaid-host">' + res.svg + '</div>';
+      } catch (err) {
+        console.warn('Erro ao renderizar Mermaid:', err);
+        var dangling = document.getElementById(id);
+        if (dangling) dangling.remove();
+        container.innerHTML = '<div class="mermaid-error">Erro ao renderizar diagrama Mermaid</div><pre class="mermaid-raw-code"><code>' + escapeHtml(cleanDef) + '</code></pre>';
       }
     }
+  }
+
+  function renderRechartsBlocks() {
+    var containers = elements.articleContent.querySelectorAll('.recharts-container');
+    if (!containers || containers.length === 0) return;
+
+    var defaultColors = ['#8b5cf6', '#38bdf8', '#34d399', '#f59e0b', '#ec4899', '#06b6d4', '#f97316'];
+
+    containers.forEach(function(container) {
+      var raw = container.getAttribute('data-recharts') || '';
+      if (!raw) return;
+
+      var config = null;
+      try {
+        var unescaped = raw
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&amp;/g, '&');
+        config = JSON.parse(unescaped);
+      } catch (err) {
+        container.innerHTML = '<div class="recharts-error-box">Erro ao carregar dados do gráfico.</div>';
+        return;
+      }
+
+      if (!config || !Array.isArray(config.data) || config.data.length === 0) {
+        container.innerHTML = '<div class="recharts-error-box">Gráfico sem dados para exibição.</div>';
+        return;
+      }
+
+      var data = config.data;
+      var xKey = config.xKey || (config.xAxis && config.xAxis.dataKey) || Object.keys(data[0])[0];
+      var title = config.title || '';
+      var chartType = (config.type || 'bar').toLowerCase();
+
+      // Identificar séries (bars, lines, areas ou series)
+      var series = [];
+      if (Array.isArray(config.series) && config.series.length > 0) {
+        series = config.series;
+      } else {
+        if (Array.isArray(config.bars)) {
+          config.bars.forEach(function(b, idx) {
+            series.push({
+              type: 'bar',
+              dataKey: b.dataKey,
+              name: b.name || b.dataKey,
+              fill: b.fill || defaultColors[idx % defaultColors.length]
+            });
+          });
+        }
+        if (Array.isArray(config.lines)) {
+          config.lines.forEach(function(l, idx) {
+            series.push({
+              type: 'line',
+              dataKey: l.dataKey,
+              name: l.name || l.dataKey,
+              stroke: l.stroke || defaultColors[(series.length + idx) % defaultColors.length]
+            });
+          });
+        }
+        if (Array.isArray(config.areas)) {
+          config.areas.forEach(function(a, idx) {
+            series.push({
+              type: 'area',
+              dataKey: a.dataKey,
+              name: a.name || a.dataKey,
+              fill: a.fill || defaultColors[(series.length + idx) % defaultColors.length],
+              stroke: a.stroke || defaultColors[(series.length + idx) % defaultColors.length]
+            });
+          });
+        }
+      }
+
+      // Inferir séries se não especificadas
+      if (series.length === 0) {
+        var firstItem = data[0];
+        var sIdx = 0;
+        for (var k in firstItem) {
+          if (k !== xKey && typeof firstItem[k] === 'number') {
+            series.push({
+              type: chartType === 'line' ? 'line' : 'bar',
+              dataKey: k,
+              name: k,
+              fill: defaultColors[sIdx % defaultColors.length],
+              stroke: defaultColors[sIdx % defaultColors.length]
+            });
+            sIdx++;
+          }
+        }
+      }
+
+      // Dimensões SVG
+      var W = 740;
+      var H = 360;
+      var padLeft = 60;
+      var padRight = 30;
+      var padTop = 30;
+      var padBottom = 55;
+      var plotW = W - padLeft - padRight;
+      var plotH = H - padTop - padBottom;
+
+      // Calcular valor máximo
+      var maxVal = 0;
+      series.forEach(function(s) {
+        data.forEach(function(d) {
+          var v = Number(d[s.dataKey]);
+          if (!isNaN(v) && v > maxVal) maxVal = v;
+        });
+      });
+      if (maxVal <= 0) maxVal = 10;
+      var niceMax = Math.ceil(maxVal * 1.15);
+      if (niceMax > 10 && niceMax % 2 !== 0) niceMax += 1;
+
+      var isDark = state.theme !== 'light';
+      var axisColor = isDark ? '#4b5563' : '#cbd5e1';
+      var gridColor = isDark ? 'rgba(255, 255, 255, 0.07)' : 'rgba(0, 0, 0, 0.06)';
+      var textColor = isDark ? '#9ca3af' : '#64748b';
+
+      var svg = '';
+      svg += '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" height="100%" style="overflow:visible;" xmlns="http://www.w3.org/2000/svg">';
+
+      // Defs (Gradients)
+      svg += '<defs>';
+      series.forEach(function(s, sIdx) {
+        var col = s.fill || s.stroke || defaultColors[sIdx % defaultColors.length];
+        svg += '<linearGradient id="recharts_grad_' + sIdx + '" x1="0" y1="0" x2="0" y2="1">';
+        svg += '  <stop offset="0%" stop-color="' + col + '" stop-opacity="0.85" />';
+        svg += '  <stop offset="100%" stop-color="' + col + '" stop-opacity="0.3" />';
+        svg += '</linearGradient>';
+      });
+      svg += '</defs>';
+
+      // Linhas de Grade e Eixo Y
+      var yTicks = 4;
+      for (var yi = 0; yi <= yTicks; yi++) {
+        var frac = yi / yTicks;
+        var yVal = Math.round(niceMax * (1 - frac) * 10) / 10;
+        var yPos = padTop + frac * plotH;
+
+        svg += '<line x1="' + padLeft + '" y1="' + yPos + '" x2="' + (W - padRight) + '" y2="' + yPos + '" stroke="' + gridColor + '" stroke-dasharray="4 4" />';
+        svg += '<text x="' + (padLeft - 10) + '" y="' + (yPos + 4) + '" text-anchor="end" font-size="11" fill="' + textColor + '" font-family="sans-serif">' + yVal + '</text>';
+      }
+
+      // Eixo X Linha base
+      svg += '<line x1="' + padLeft + '" y1="' + (H - padBottom) + '" x2="' + (W - padRight) + '" y2="' + (H - padBottom) + '" stroke="' + axisColor + '" stroke-width="1.5" />';
+
+      var count = data.length;
+      var step = count > 1 ? plotW / count : plotW;
+
+      // Renderizar Barras
+      var barSeries = series.filter(function(s) { return s.type === 'bar'; });
+      var barGroupWidth = step * 0.65;
+      var singleBarWidth = barSeries.length > 0 ? (barGroupWidth / barSeries.length) : 0;
+
+      data.forEach(function(d, dIdx) {
+        var xCenter = padLeft + dIdx * step + step / 2;
+        var label = String(d[xKey] || '');
+
+        // Rótulo Eixo X
+        svg += '<text x="' + xCenter + '" y="' + (H - padBottom + 20) + '" text-anchor="middle" font-size="11" fill="' + textColor + '" font-family="sans-serif">' + label + '</text>';
+
+        // Barras
+        barSeries.forEach(function(s, bIdx) {
+          var val = Number(d[s.dataKey]) || 0;
+          var barH = (val / niceMax) * plotH;
+          var barX = xCenter - (barGroupWidth / 2) + bIdx * singleBarWidth;
+          var barY = H - padBottom - barH;
+          var col = s.fill || defaultColors[bIdx % defaultColors.length];
+
+          svg += '<rect x="' + barX + '" y="' + barY + '" width="' + Math.max(2, singleBarWidth - 3) + '" height="' + Math.max(0, barH) + '" rx="3" fill="' + col + '" opacity="0.9">';
+          svg += '  <title>' + (s.name || s.dataKey) + ' (' + label + '): ' + val + '</title>';
+          svg += '</rect>';
+        });
+      });
+
+      // Renderizar Linhas e Áreas
+      var lineSeries = series.filter(function(s) { return s.type === 'line' || s.type === 'area'; });
+      lineSeries.forEach(function(s, sIdx) {
+        var col = s.stroke || s.fill || defaultColors[(barSeries.length + sIdx) % defaultColors.length];
+        var points = [];
+
+        data.forEach(function(d, dIdx) {
+          var xCenter = padLeft + dIdx * step + step / 2;
+          var val = Number(d[s.dataKey]) || 0;
+          var yPos = H - padBottom - (val / niceMax) * plotH;
+          points.push({ x: xCenter, y: yPos, val: val, label: String(d[xKey] || '') });
+        });
+
+        if (points.length > 0) {
+          if (s.type === 'area') {
+            var areaD = 'M ' + points[0].x + ' ' + (H - padBottom);
+            points.forEach(function(p) { areaD += ' L ' + p.x + ' ' + p.y; });
+            areaD += ' L ' + points[points.length - 1].x + ' ' + (H - padBottom) + ' Z';
+            svg += '<path d="' + areaD + '" fill="url(#recharts_grad_' + sIdx + ')" />';
+          }
+
+          var pathD = 'M ' + points[0].x + ' ' + points[0].y;
+          for (var pi = 1; pi < points.length; pi++) {
+            pathD += ' L ' + points[pi].x + ' ' + points[pi].y;
+          }
+          svg += '<path d="' + pathD + '" fill="none" stroke="' + col + '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />';
+
+          // Pontos circulares
+          points.forEach(function(p) {
+            svg += '<circle cx="' + p.x + '" cy="' + p.y + '" r="4.5" fill="' + (isDark ? '#0d1117' : '#ffffff') + '" stroke="' + col + '" stroke-width="2.5">';
+            svg += '  <title>' + (s.name || s.dataKey) + ' (' + p.label + '): ' + p.val + '</title>';
+            svg += '</circle>';
+          });
+        }
+      });
+
+      svg += '</svg>';
+
+      // Montar HTML do Container
+      var html = '<div class="recharts-frame">';
+      if (title) {
+        html += '  <div class="recharts-chart-title">' + title + '</div>';
+      }
+      html += '  <div class="recharts-svg-wrapper">' + svg + '</div>';
+
+      // Legenda
+      if (series.length > 0) {
+        html += '  <div class="recharts-legend">';
+        series.forEach(function(s, idx) {
+          var col = s.fill || s.stroke || defaultColors[idx % defaultColors.length];
+          html += '<span class="recharts-legend-item">';
+          html += '  <span class="recharts-legend-badge" style="background:' + col + '"></span>';
+          html += '  <span>' + (s.name || s.dataKey) + '</span>';
+          html += '</span>';
+        });
+        html += '  </div>';
+      }
+      html += '</div>';
+
+      container.innerHTML = html;
+    });
   }
 
   function updateLessonFooterNav() {

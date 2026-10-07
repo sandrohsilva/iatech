@@ -341,7 +341,7 @@ body {
   transition: transform 0.2s ease;
 }
 
-.chapter-header.collapsed svg {
+.chapter-group.collapsed .chapter-header svg {
   transform: rotate(-90deg);
 }
 
@@ -703,6 +703,79 @@ body {
   color: var(--accent-warning);
   margin-top: 0;
   font-size: 1.25rem;
+}
+
+/* Gráficos Recharts */
+.recharts-container {
+  margin: 28px 0;
+  padding: 20px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.recharts-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.recharts-chart-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.recharts-svg-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.recharts-svg-wrapper svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 280px;
+}
+
+.recharts-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+}
+
+.recharts-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.recharts-legend-badge {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.recharts-error-box {
+  padding: 14px;
+  background: var(--accent-danger-bg);
+  border: 1px solid var(--accent-danger);
+  border-radius: var(--radius-sm);
+  color: var(--accent-danger);
+  font-size: 0.88rem;
 }
 
 /* Navegação Inferior da Lição */

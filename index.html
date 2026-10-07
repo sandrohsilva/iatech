@@ -53,16 +53,17 @@
   <div class="ambient-glow"></div>
 
   <!-- Header Navigation -->
-  <header class="navbar">
+  <header class="navbar" id="site-header">
     <div class="container nav-container">
-      <a href="#" class="nav-logo-box" title="iA Tech Website">
+      <a href="#" class="nav-logo-box" id="nav-logo-home" title="iA Tech Website">
         <img src="logo.webp" alt="iA Tech Logo" class="nav-logo-img">
       </a>
 
       <ul class="nav-links">
-        <li><a href="#sobre">Sobre Nós</a></li>
-        <li><a href="#produtos">Produtos & Soluções</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#sobre" class="portal-nav-link">Sobre Nós</a></li>
+        <li><a href="#produtos" class="portal-nav-link">Produtos & Soluções</a></li>
+        <li><a href="#curso-pc-gamer" id="nav-curso-link" class="nav-link-highlight">Curso PC-GAMER</a></li>
+        <li><a href="#contato" class="portal-nav-link">Contato</a></li>
       </ul>
 
       <div class="badge-status">
@@ -72,7 +73,12 @@
     </div>
   </header>
 
-  <main>
+  <!-- Course View Container Rendered Below Fixed Header -->
+  <div id="course-container" class="course-container hidden">
+    <iframe id="course-frame" src="about:blank" data-src="pc-gamer/index.html" title="Curso de PC-GAMER Grátis" allowfullscreen></iframe>
+  </div>
+
+  <main id="portal-main">
     <!-- Hero Section -->
     <section class="hero container">
       <!-- White card background to match white background of logo.webp 800x800 -->
@@ -88,13 +94,21 @@
       </p>
 
       <div class="hero-cta-group">
-        <a href="#produtos" class="btn btn-primary">
+        <a href="#produtos" class="btn btn-primary portal-nav-link">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M19 11H5m14 0l-7-7m7 7l-7 7" />
           </svg>
           Conhecer Nossos Produtos
         </a>
-        <a href="#contato" class="btn btn-secondary">
+        <a href="#curso-pc-gamer" id="btn-curso-pcgamer" class="btn btn-warning">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          Curso de PC-GAMER grátis
+        </a>
+        <a href="#contato" class="btn btn-secondary portal-nav-link">
           Falar com Atendimento
         </a>
       </div>
