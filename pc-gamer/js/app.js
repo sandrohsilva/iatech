@@ -71,96 +71,14 @@
     btnCloseQuiz: document.getElementById('btnCloseQuiz'),
   };
 
-  // ==========================================
-  // Parser Markdown Embutido Leve & Seguro
-  // ==========================================
-  function parseMarkdown(md) {
-    if (!md) return '';
-
-    // Remove YAML frontmatter
-    var text = md.replace(/^---[\s\S]*?---\n*/m, '');
-
-    // Remove tags ocultas de quiz/apresentacao
-    text = text.replace(/<section class="interactive-presentation" hidden>[\s\S]*?<\/section>/g, '');
-    text = text.replace(/<section class="interactive-quiz" hidden>[\s\S]*?<\/section>/g, '');
-
-    function escapeHtml(str) {
-      return String(str || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-
-    // Tratar Blocos de Codigo
-    var codeBlocks = [];
-    text = text.replace(/(?:\x60\x60\x60\x60|\x60\x60\x60)([a-zA-Z0-9_-]*)\n([\s\S]*?)(?:\x60\x60\x60\x60|\x60\x60\x60)/g, function(match, lang, code) {
-      var id = '___CODE_BLOCK_' + codeBlocks.length + '___';
-      codeBlocks.push({ lang: lang || 'text', code: escapeHtml(code.trim()) });
-      return id;
+  // Inicializar Mermaid
+  if (window.mermaid) {
+    window.mermaid.initialize({
+      startOnLoad: false,
+      theme: state.theme === 'light' ? 'default' : 'dark',
+      securityLevel: 'loose',
+      fontFamily: 'Plus Jakarta Sans, system-ui, sans-serif'
     });
-
-    // Tratar Desafio Pratico
-    text = text.replace(/##\s+Desafio pr[aá]tico\n([\s\S]*?)(?=\n##|$)/gi, function(match, content) {
-      return '<aside class="practice-challenge-card"><h2>🎯 Desafio Prático</h2>\n' + content + '</aside>\n';
-    });
-
-    // Headers
-    text = text.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-    text = text.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-    text = text.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-
-    // Blockquotes
-    text = text.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
-
-    // Imagens: normalizar caminhos ../images/ para images/
-    text = text.replace(/!\[([^\]]*)\]\((?:\.\.\/)*images\/([^\)]+)\)/gi, '<img src="./images/$2" alt="$1" loading="lazy" />');
-    text = text.replace(/!\[([^\]]*)\]\(([^\)]+)\)/gi, '<img src="$2" alt="$1" loading="lazy" />');
-
-    // Links
-    text = text.replace(/\[([^\]]+)\]\(([^\)]+)\)/gi, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-
-    // Bold & Italics
-    text = text.replace(/\*\*([^\*]+)\*\*/gi, '<strong>$1</strong>');
-    text = text.replace(/\*([^\*]+)\*/gi, '<em>$1</em>');
-    text = text.replace(/_([^_]+)_/gi, '<em>$1</em>');
-
-    // Inline Code
-    text = text.replace(/\x60([^\x60]+)\x60/gi, '<code>$1</code>');
-
-    // Tabelas simples
-    text = text.replace(/\|(.+)\|\n\|[-:\| ]+\|\n((?:\|.+\|\n?)+)/g, function(match, header, body) {
-      var ths = header.split('|').map(function(s) { return s.trim(); }).filter(Boolean).map(function(h) { return '<th>' + h + '</th>'; }).join('');
-      var rows = body.trim().split('\n').map(function(row) {
-        var tds = row.split('|').map(function(s) { return s.trim(); }).filter(Boolean).map(function(d) { return '<td>' + d + '</td>'; }).join('');
-        return '<tr>' + tds + '</tr>';
-      }).join('');
-      return '<table><thead><tr>' + ths + '</tr></thead><tbody>' + rows + '</tbody></table>';
-    });
-
-    // Listas
-    text = text.replace(/^\s*-\s+(.*$)/gim, '<li>$1</li>');
-    text = text.replace(/(<li>.*<\/li>\n?)+/gi, '<ul>$&</ul>');
-
-    // Paragrafos
-    var paragraphs = text.split(/\n{2,}/);
-    text = paragraphs.map(function(p) {
-      p = p.trim();
-      if (!p) return '';
-      if (p.startsWith('<h') || p.startsWith('<ul') || p.startsWith('<table') || p.startsWith('<blockquote') || p.startsWith('<aside') || p.startsWith('___CODE_BLOCK_')) {
-        return p;
-      }
-      return '<p>' + p.replace(/\n/g, '<br />') + '</p>';
-    }).join('\n');
-
-    // Restaurar blocos de codigo
-    codeBlocks.forEach(function(block, idx) {
-      var placeholder = '___CODE_BLOCK_' + idx + '___';
-      var replacement = '<pre><button class="code-copy-btn" type="button">Copiar</button><code class="language-' + block.lang + '">' + block.code + '</code></pre>';
-      text = text.replace(placeholder, replacement);
-    });
-
-    return text;
   }
 
   // ==========================================
@@ -175,12 +93,22 @@
       elements.themeIconSun.classList.add('hidden');
       elements.themeIconMoon.classList.remove('hidden');
     }
+
+    if (window.mermaid) {
+      window.mermaid.initialize({
+        startOnLoad: false,
+        theme: state.theme === 'light' ? 'default' : 'dark',
+      });
+    }
   }
 
   function toggleTheme() {
     state.theme = state.theme === 'light' ? 'dark' : 'light';
     localStorage.setItem('navdoc_theme', state.theme);
     initTheme();
+
+    // Re-renderizar Mermaid se presente na licao atual
+    renderMermaidBlocks();
   }
 
   // ==========================================
@@ -268,7 +196,7 @@
   }
 
   // ==========================================
-  // Carregamento de Licao
+  // Carregamento de Licao (HTML5 Pré-Renderizado)
   // ==========================================
   function loadLesson(chapterIndex, lessonIndex) {
     if (!state.course || !state.course.chapters[chapterIndex]) return;
@@ -287,7 +215,7 @@
 
     // Atualizar Barra de Acoes Rapidas
     elements.lessonChapterBadge.textContent = 'Capítulo ' + chapter.order;
-    var wordMatch = lesson.markdown.match(/\p{L}+/gu);
+    var wordMatch = (lesson.markdown || '').match(/\p{L}+/gu);
     var wordCount = wordMatch ? wordMatch.length : 0;
     var readMin = Math.max(1, Math.ceil(wordCount / 180));
     elements.lessonReadingTime.textContent = '⏱️ ~' + readMin + ' min de leitura (' + wordCount.toLocaleString() + ' palavras)';
@@ -306,13 +234,24 @@
 
     elements.lessonActionToolbar.classList.remove('hidden');
 
-    // Renderizar Artigo Markdown
-    elements.articleContent.innerHTML = parseMarkdown(lesson.markdown);
+    // Inserir HTML5 Pré-Renderizado
+    elements.articleContent.innerHTML = lesson.htmlContent || '<p>Nenhum conteúdo disponível.</p>';
+
+    // Executar Highlight.js nos blocos de código
+    if (window.hljs) {
+      elements.articleContent.querySelectorAll('pre code').forEach(function(block) {
+        window.hljs.highlightElement(block);
+      });
+    }
+
+    // Executar Mermaid nos blocos de diagrama
+    renderMermaidBlocks();
 
     // Configurar botoes de copiar codigo
     elements.articleContent.querySelectorAll('.code-copy-btn').forEach(function(btn) {
       btn.addEventListener('click', async function() {
-        var code = btn.nextElementSibling ? btn.nextElementSibling.textContent || '' : '';
+        var wrapper = btn.closest('.code-block-wrapper');
+        var code = wrapper ? wrapper.querySelector('code')?.textContent || '' : '';
         try {
           await navigator.clipboard.writeText(code);
           btn.textContent = 'Copiado!';
@@ -332,6 +271,19 @@
     // Rolar para o topo da area de leitura
     var contentEl = document.getElementById('contentArea');
     if (contentEl) contentEl.scrollTop = 0;
+  }
+
+  function renderMermaidBlocks() {
+    if (window.mermaid) {
+      var mermaidNodes = elements.articleContent.querySelectorAll('.mermaid');
+      if (mermaidNodes.length > 0) {
+        try {
+          window.mermaid.run({ nodes: mermaidNodes });
+        } catch (err) {
+          console.warn('Erro ao renderizar Mermaid:', err);
+        }
+      }
+    }
   }
 
   function updateLessonFooterNav() {
@@ -415,8 +367,8 @@
     var html = '<h3>' + escapeHtml(slide.title || '') + '</h3>';
 
     if (slide.exportImagePath) {
-      var imgPath = slide.exportImagePath.replace(/^(?:\.\.\/)*assets\/images\/|^images\//, './images/');
-      html += '<img src="' + imgPath + '" alt="' + escapeHtml(slide.title || 'Slide Image') + '" />';
+      var imgPath = slide.exportImagePath;
+      html += '<img src="' + imgPath + '" alt="' + escapeHtml(slide.title || 'Slide Image') + '" onerror="if(!this.dataset.fallback){this.dataset.fallback=\'1\';this.src=this.src.endsWith(\'.webp\')?this.src.replace(/\\.webp$/i,\'.png\'):this.src.replace(/\\.png$/i,\'.webp\');}" />';
     }
 
     if (slide.bulletPoints && slide.bulletPoints.length > 0) {

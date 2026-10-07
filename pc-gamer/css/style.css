@@ -1,6 +1,6 @@
 /* ==========================================================================
    NavDoc Web Standalone Engine — Stylesheet
-   Design System moderno, responsivo com suporte a Dark/Light Mode e GitHub Pages
+   Design System moderno, responsivo com suporte a Dark/Light Mode, KaTeX, Mermaid e GitHub Pages
    ========================================================================== */
 
 :root {
@@ -503,7 +503,7 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
-/* Markdown Styles */
+/* Markdown & HTML5 Body Styles */
 .markdown-body {
   font-size: 1.02rem;
   line-height: 1.75;
@@ -574,57 +574,97 @@ body {
   border: 1px solid var(--border-color);
 }
 
-.markdown-body pre {
-  position: relative;
-  background-color: var(--bg-code);
+/* Code Block Wrapper */
+.code-block-wrapper {
+  background-color: #121820;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 16px;
   margin: 20px 0;
-  overflow-x: auto;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
-.markdown-body pre code {
+.code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #18202c;
+  padding: 6px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-lang-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.code-copy-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #c9d1d9;
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.code-copy-btn:hover {
+  background: var(--accent-primary);
+  color: #000000;
+}
+
+.code-block-wrapper pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: transparent;
+  border: none;
+}
+
+.code-block-wrapper pre code {
   background: transparent;
   padding: 0;
   border: none;
   font-size: 0.88rem;
   line-height: 1.6;
-  color: #e6edf3;
 }
 
-.code-copy-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+/* Mermaid Container */
+.mermaid-container {
+  margin: 24px 0;
+  padding: 20px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  font-size: 0.72rem;
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s, background 0.2s;
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
 }
 
-.markdown-body pre:hover .code-copy-btn {
-  opacity: 1;
+/* KaTeX Blocks */
+.katex-block {
+  margin: 20px 0;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  text-align: center;
 }
 
-.code-copy-btn:hover {
-  background: var(--accent-primary-bg);
-  color: var(--accent-primary);
-  border-color: var(--accent-primary);
-}
-
+/* Imagens */
 .markdown-body img {
   max-width: 100%;
   height: auto;
   border-radius: var(--radius-md);
-  margin: 20px 0;
+  margin: 20px auto;
   border: 1px solid var(--border-color);
   display: block;
+  box-shadow: var(--shadow-sm);
 }
 
 .markdown-body table {

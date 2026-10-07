@@ -4,15 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PC Gamer, aprenda tudo sobre as peças, sua importancia para o setup, compatibilidade. Como escolher a melhor configuração para seu orçamento, e como montar você mesmo — NavDoc Web</title>
-  <meta name="description" content="Curso interativo estruturado com lições em Markdown, apresentações em slides e quizzes avaliativos." />
+  <meta name="description" content="Curso interativo estruturado com lições em HTML5/Markdown, fórmulas KaTeX, diagramas Mermaid, apresentações em slides e quizzes." />
   
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   
-  <!-- Estilos -->
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
+
+  <!-- Highlight.js CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" id="hljsThemeDark" />
+  
+  <!-- Estilos Customizados -->
   <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Mermaid JS para diagramas -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+  <!-- Highlight.js para realce de sintaxe -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 </head>
 <body>
   <div id="app-container" class="app-layout">
@@ -117,7 +129,7 @@
             </div>
           </div>
 
-          <!-- Artigo com conteúdo Markdown -->
+          <!-- Artigo com conteúdo HTML5 Pré-Renderizado -->
           <article id="articleContent" class="markdown-body">
             <div class="welcome-screen">
               <h2>Bem-vindo ao Curso!</h2>
