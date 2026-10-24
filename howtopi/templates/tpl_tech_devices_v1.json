@@ -1,0 +1,104 @@
+{
+  "template_id": "tpl_tech_devices_v1",
+  "version": "1.0.0",
+  "name": "Assistência Técnica de Smartphones & TI",
+  "short_name": "Assistência TI",
+  "category": "TECH_REPAIR",
+  "icon_name": "devices_other_rounded",
+  "accent_color": "#0284C7",
+  "is_builtin": false,
+  "is_pinned_to_home": false,
+  "sort_order": 14,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "camera_hud_config": {
+    "enable_location_tag": false,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Parte do Aparelho",
+    "group_tags": [
+      "Tela / Display",
+      "Tampa Traseira",
+      "Aro / Laterais",
+      "Câmeras / Lentes",
+      "Conector de Carga",
+      "Acessórios Entregues"
+    ],
+    "status_tags_label": "Avaria na Entrada",
+    "status_tags": [
+      "Intacto / Sem Riscos",
+      "Riscos Leves",
+      "Vidro Trincado",
+      "Display Manchado / Burn-in",
+      "Carcaça Amassada"
+    ],
+    "guided_shots": [
+      "1. Frente com display aceso exibindo IMEI (*#06#)",
+      "2. Tampa traseira com lente de câmeras visível",
+      "3. Laterais e botão power / volume",
+      "4. Conector USB e bandeja do chip",
+      "5. Ordem de serviço física ou termo de entrega"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "device_brand_model",
+      "label": "Marca e Modelo do Aparelho",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: iPhone 14 Pro Max"
+    },
+    {
+      "key": "device_imei",
+      "label": "IMEI / Número de Série",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "reported_defect",
+      "label": "Defeito Relatado pelo Cliente",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "turn_on_status",
+      "label": "Aparelho Liga?",
+      "type": "SELECT_DROPDOWN",
+      "required": true,
+      "options": [
+        "Liga Normalmente",
+        "Liga mas Tela Fica Preta",
+        "Totalmente Inoperante / Não Liga"
+      ]
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "detail_label",
+      "label": "Identificador do Dano",
+      "type": "TEXT",
+      "required": false
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "TECHNICIAN",
+      "label": "Técnico de Bancada",
+      "required": true,
+      "require_doc": true,
+      "require_photo": true
+    },
+    {
+      "role": "CUSTOMER",
+      "label": "Cliente",
+      "required": true,
+      "require_doc": true,
+      "require_photo": false
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "STANDARD",
+    "generate_budget_csv": true,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1792855350952
+}

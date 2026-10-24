@@ -1,0 +1,110 @@
+{
+  "template_id": "tpl_solar_photovoltaic_v1",
+  "version": "1.0.0",
+  "name": "Energia Solar & Inversores",
+  "short_name": "Solar / Inversor",
+  "category": "ENERGY",
+  "icon_name": "solar_power_rounded",
+  "accent_color": "#F59E0B",
+  "is_builtin": false,
+  "is_pinned_to_home": false,
+  "sort_order": 11,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": true,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Subsistema Solar",
+    "group_tags": [
+      "Arranjo de Módulos (Telhado)",
+      "String Box CC",
+      "Inversor Solar",
+      "Quadro CA / Disjuntor",
+      "Aterramento / DPS",
+      "Cabeamento Estruturado"
+    ],
+    "status_tags_label": "Condição Operacional",
+    "status_tags": [
+      "Geração Normal",
+      "Sombra / Sujeira Severa",
+      "Hotspot Térmico",
+      "Conector Oxidado",
+      "Erro de Isolamento"
+    ],
+    "guided_shots": [
+      "1. Panorama geral das fileiras de módulos solares",
+      "2. Inversor ligado com display de potência ativa",
+      "3. String box aberta com fusíveis e DPS íntegros",
+      "4. Conectores MC4 e prensa-cabos",
+      "5. Ponto de conexão ao padrão da concessionária"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "plant_power_kwp",
+      "label": "Potência Instalada (kWp)",
+      "type": "NUMBER",
+      "required": true
+    },
+    {
+      "key": "inverter_brand_model",
+      "label": "Marca e Modelo do Inversor",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "modules_count",
+      "label": "Quantidade de Módulos",
+      "type": "NUMBER",
+      "required": true
+    },
+    {
+      "key": "cleaning_status",
+      "label": "Estado de Limpeza dos Painéis",
+      "type": "SELECT_DROPDOWN",
+      "required": true,
+      "options": [
+        "Limpos",
+        "Poeira Leve",
+        "Sujeira Moderada",
+        "Crítico (Exige Lavagem)"
+      ]
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "string_id",
+      "label": "Identificador da String",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "key": "voc_voltage",
+      "label": "Tensão de Circuito Aberto (V)",
+      "type": "NUMBER",
+      "required": false
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "ELECTRICAL_ENG",
+      "label": "Engenheiro Eletricista",
+      "required": true,
+      "require_doc": true,
+      "require_photo": true
+    },
+    {
+      "role": "CLIENT",
+      "label": "Proprietário da Usina",
+      "required": false,
+      "require_doc": false,
+      "require_photo": false
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "STANDARD",
+    "generate_budget_csv": true,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1792855350952
+}

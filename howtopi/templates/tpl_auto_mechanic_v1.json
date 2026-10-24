@@ -1,0 +1,98 @@
+{
+  "template_id": "tpl_auto_mechanic_v1",
+  "version": "1.0.0",
+  "name": "Oficina Mecânica & Checklist Auto",
+  "short_name": "Oficina Mecânica",
+  "category": "REPAIRS",
+  "icon_name": "build_circle_rounded",
+  "accent_color": "#6366F1",
+  "is_builtin": true,
+  "is_pinned_to_home": false,
+  "sort_order": 5,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "asset_path": "assets/oficina-mecanica.png",
+  "camera_hud_config": {
+    "enable_location_tag": false,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": true,
+    "group_tags_label": "Sistema Veicular",
+    "group_tags": [
+      "Checklist Entrada (Avarias)",
+      "Painel / Odômetro (KM)",
+      "Peça Danificada (Antes)",
+      "Peça Nova Instalada (Depois)",
+      "Motor / Fluidos",
+      "Pneus / Suspensão",
+      "Teste de Funcionamento"
+    ],
+    "status_tags_label": "Estado / Laudo Mecânico",
+    "status_tags": [
+      "Substituição Obrigatória",
+      "Avaria Pré-existente",
+      "Desgaste Normal",
+      "Instalado / Novo",
+      "Testado OK"
+    ],
+    "guided_shots": [
+      "Visão frontal e placa do veículo na recepção",
+      "Painel ligado com hodômetro (KM) e nível de combustível",
+      "Quatro cantos da lataria (verificação de arranhões prévios)",
+      "Peça avariada ou trincada desmontada (Antes)",
+      "Peça nova instalada no veículo (Depois)"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "vehicle_plate",
+      "label": "Placa do Veículo",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: BRA-2E19"
+    },
+    {
+      "key": "odometer_km",
+      "label": "Quilometragem (KM)",
+      "type": "NUMBER",
+      "placeholder": "Ex: 85200"
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "part_name",
+      "label": "Peça / Componente",
+      "type": "TEXT",
+      "placeholder": "Ex: Pastilha de freio dianteira",
+      "in_budget_csv": true
+    },
+    {
+      "key": "service_action",
+      "label": "Ação Recomendada",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "Substituir",
+        "Reparar",
+        "Limpar/Ajustar",
+        "Troca de Fluido"
+      ],
+      "in_budget_csv": true
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "MECHANIC",
+      "label": "Mecânico Responsável",
+      "required": true
+    },
+    {
+      "role": "CUSTOMER",
+      "label": "Cliente Proprietário",
+      "required": true
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "REPAIR_QUOTE_AND_COMPARISON",
+    "generate_budget_csv": true,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1767225600000
+}

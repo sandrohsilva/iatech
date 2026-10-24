@@ -1,0 +1,85 @@
+{
+  "template_id": "tpl_insurance_claim_v1",
+  "version": "1.0.0",
+  "name": "Regulação de Sinistro & Seguradora",
+  "short_name": "Regulação de Sinistro",
+  "category": "INSURANCE",
+  "icon_name": "shield_rounded",
+  "accent_color": "#8B5CF6",
+  "is_builtin": true,
+  "is_pinned_to_home": false,
+  "sort_order": 6,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "asset_path": "assets/regulacao-sinistro.png",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": true,
+    "group_tags_label": "Componente do Sinistro",
+    "group_tags": [
+      "Bens Danificados",
+      "Origem do Sinistro",
+      "Causa Aparente",
+      "Área Atingida",
+      "Salvados"
+    ],
+    "status_tags_label": "Nível de Perda",
+    "status_tags": [
+      "Perda Total",
+      "Dano Severo",
+      "Dano Leve",
+      "Preservado",
+      "Sob Investigação"
+    ],
+    "guided_shots": [
+      "Panorâmica do local do sinistro e acessos",
+      "Ponto focal de origem (curto-circuito, infiltração, arrombamento)",
+      "Inventário geral dos bens afetados",
+      "Bens salvados preservados em local seguro"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "policy_number",
+      "label": "Nº da Apólice / Sinistro",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: SIN-2026-98124"
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "affected_asset",
+      "label": "Bem / Objeto Atingido",
+      "type": "TEXT",
+      "placeholder": "Ex: Estoque de eletrônicos, Forro de gesso"
+    },
+    {
+      "key": "loss_estimation",
+      "label": "Classificação da Perda",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "Recuperável no Local",
+        "Remoção p/ Reparo",
+        "Perda Total (Sucata)"
+      ]
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "REGULATOR",
+      "label": "Perito Regulador",
+      "required": true
+    },
+    {
+      "role": "INSURED",
+      "label": "Segurado / Representante",
+      "required": true
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "TIMELINE",
+    "generate_budget_csv": false,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1767225600000
+}

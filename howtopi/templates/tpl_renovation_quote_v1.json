@@ -1,0 +1,103 @@
+{
+  "template_id": "tpl_renovation_quote_v1",
+  "version": "1.0.0",
+  "name": "Orçamento & Reparos (Antes/Depois)",
+  "short_name": "Reforma & Orçamento",
+  "category": "REPAIRS",
+  "icon_name": "format_paint_rounded",
+  "accent_color": "#EC4899",
+  "is_builtin": true,
+  "is_pinned_to_home": true,
+  "sort_order": 4,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "asset_path": "assets/reforma-orcamento.png",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": true,
+    "group_tags_label": "Ambiente / Sistema",
+    "group_tags": [
+      "Fachada",
+      "Sala/Quarto",
+      "Hidráulica",
+      "Elétrica",
+      "Pintura",
+      "Piso/Revestimento"
+    ],
+    "status_tags_label": "Etapa do Reparo",
+    "status_tags": [
+      "Para Orçar (Antes)",
+      "Dano Pré-Existente",
+      "Em Execução",
+      "Reparo Concluído (Depois)"
+    ],
+    "guided_shots": [
+      "Visão panorâmica do ambiente antes da intervenção",
+      "Detalhe em close do elemento a ser reparado ou demolido",
+      "Tubulações ou fiações expostas a substituir",
+      "Área de descarte e ponto de energia/água para equipe"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "target_object_id",
+      "label": "Identificação da Obra / Local",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: Reforma Cozinha e Banheiro - Casa 04"
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "work_item_title",
+      "label": "Item / Serviço Necessário",
+      "type": "TEXT",
+      "placeholder": "Ex: Troca de porcelanato, Pintura acrílica",
+      "in_budget_csv": true
+    },
+    {
+      "key": "parts_or_materials",
+      "label": "Peças ou Materiais",
+      "type": "TEXT",
+      "placeholder": "Ex: 2 sacos argamassa AC3, 30m² piso",
+      "in_budget_csv": true
+    },
+    {
+      "key": "quantity",
+      "label": "Qtd / Medida",
+      "type": "NUMBER",
+      "in_budget_csv": true
+    },
+    {
+      "key": "unit",
+      "label": "Unidade",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "un",
+        "m²",
+        "m",
+        "horas",
+        "vb"
+      ],
+      "in_budget_csv": true
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "CONTRACTOR",
+      "label": "Prestador de Serviço / Orçamentista",
+      "required": true
+    },
+    {
+      "role": "CLIENT",
+      "label": "Cliente / Autorizador",
+      "required": true
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "REPAIR_QUOTE_AND_COMPARISON",
+    "generate_budget_csv": true,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1767225600000
+}

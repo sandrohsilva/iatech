@@ -1,0 +1,98 @@
+{
+  "template_id": "tpl_traffic_accident_v1",
+  "version": "1.0.0",
+  "name": "Acidente de Trânsito (B.O. / Sinistro)",
+  "short_name": "Colisão / Trânsito",
+  "category": "TRAFFIC",
+  "icon_name": "car_crash_rounded",
+  "accent_color": "#EF4444",
+  "is_builtin": true,
+  "is_pinned_to_home": true,
+  "sort_order": 1,
+  "default_entry_mode": "STANDALONE_ONLY",
+  "asset_path": "assets/crash-car.png",
+  "camera_hud_config": {
+    "enable_location_tag": false,
+    "require_gps_compass": true,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Etapa Pericial do Sinistro",
+    "group_tags": [
+      "1. Panorâmica da Via / Sinalização",
+      "2. Posição dos Veículos",
+      "3. Placas e Chassi",
+      "4. Danos Veículo A",
+      "5. Danos Veículo B",
+      "6. CNH / Doc Terceiro",
+      "7. Ponto de Impacto"
+    ],
+    "status_tags_label": "Gravidade do Impacto",
+    "status_tags": [
+      "Impacto Severo",
+      "Impacto Médio",
+      "Avaria Leve",
+      "Peça Deslocada",
+      "Preservado"
+    ],
+    "guided_shots": [
+      "Panorâmica ampla dos veículos parados na via",
+      "Placa e frente do veículo A",
+      "Placa e frente do veículo B",
+      "Ponto central do impacto e estilhaços",
+      "Sinalização de solo ou placas de trânsito",
+      "Documentos e CNH do condutor terceiro"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "third_party_plate",
+      "label": "Placa do Terceiro / Outro Veículo",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: ABC-1D23"
+    },
+    {
+      "key": "third_party_driver",
+      "label": "Nome do Outro Condutor",
+      "type": "TEXT",
+      "required": false,
+      "placeholder": "Ex: José Carlos"
+    },
+    {
+      "key": "third_party_contact",
+      "label": "Telefone / WhatsApp do Terceiro",
+      "type": "TEXT",
+      "required": false,
+      "placeholder": "Ex: (11) 98765-4321"
+    },
+    {
+      "key": "witness_info",
+      "label": "Testemunha (Nome e Contato)",
+      "type": "TEXT",
+      "required": false,
+      "placeholder": "Ex: Maria - (11) 99999-8888"
+    }
+  ],
+  "capture_fields_schema": [],
+  "actors_signature_schema": [
+    {
+      "role": "DRIVER_A",
+      "label": "Condutor Principal (Você)",
+      "required": true,
+      "require_doc": true,
+      "require_photo": false
+    },
+    {
+      "role": "DRIVER_B",
+      "label": "Outro Condutor / Terceiro",
+      "required": false,
+      "require_doc": true,
+      "require_photo": false
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "TRAFFIC_DOSSIER",
+    "generate_budget_csv": false,
+    "desktop_workflow_optimized": false
+  },
+  "installed_at": 1767225600000
+}

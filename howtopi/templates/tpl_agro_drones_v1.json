@@ -1,0 +1,130 @@
+{
+  "template_id": "tpl_agro_drones_v1",
+  "version": "1.2.0",
+  "name": "Drones & Pulverização Agrícola",
+  "short_name": "Agro & Drones",
+  "category": "",
+  "icon_name": "agriculture_rounded",
+  "accent_color": "#16a34a",
+  "is_builtin": false,
+  "is_pinned_to_home": false,
+  "sort_order": 9,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": true,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Componente do Drone / Aeronave",
+    "group_tags": [
+      "Hélices / Motores",
+      "Tanque de Calda",
+      "Bicos Pulverizadores",
+      "Trem de Pouso",
+      "Sensores / Câmeras",
+      "Bateria / Conectores"
+    ],
+    "status_tags_label": "Estado de Conservação",
+    "status_tags": [
+      "Operacional / Perfeito",
+      "Limpeza Necessária",
+      "Manutenção Preventiva",
+      "Fissura / Trinca",
+      "Substituição Imediata"
+    ],
+    "guided_shots": [
+      "1. Visão geral da aeronave montada no campo",
+      "2. Pás de cada motor e bordas de ataque",
+      "3. Bicos injetores e mangueiras de pressão",
+      "4. Display de telemetria e satélites GPS",
+      "5. Bateria e contatos elétricos"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "drone_model",
+      "label": "Modelo do Drone / Aeronave",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: DJI Agras T40"
+    },
+    {
+      "key": "drone_serial",
+      "label": "Número de Série / Registro ANAC",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: PP-123456"
+    },
+    {
+      "key": "pilot_name",
+      "label": "Operador / Piloto Remoto",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: Carlos Silveira"
+    },
+    {
+      "key": "flight_hours",
+      "label": "Horas de Voo Acumuladas",
+      "type": "NUMBER",
+      "required": false
+    },
+    {
+      "key": "wind_speed_kmh",
+      "label": "Velocidade do Vento (km/h)",
+      "type": "NUMBER",
+      "required": false
+    },
+    {
+      "key": "flight_status",
+      "label": "Status da Missão",
+      "type": "SELECT_DROPDOWN",
+      "required": true,
+      "options": [
+        "Liberado para Voo",
+        "Restrição Parcial",
+        "Interditado / Manutenção"
+      ]
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "component_id",
+      "label": "ID da Peça / Motor",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "key": "avaria_grau",
+      "label": "Nível da Ocorrência",
+      "type": "SELECT_DROPDOWN",
+      "required": false,
+      "options": [
+        "Leve",
+        "Moderado",
+        "Grave / Crítico"
+      ]
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "PILOT",
+      "label": "Piloto Responsável",
+      "required": true,
+      "require_doc": true,
+      "require_photo": true
+    },
+    {
+      "role": "CLIENT",
+      "label": "Agrônomo / Fazendeiro",
+      "required": false,
+      "require_doc": false,
+      "require_photo": false
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "STANDARD",
+    "generate_budget_csv": true,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1792855350952,
+  "description": ""
+}

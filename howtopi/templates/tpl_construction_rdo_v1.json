@@ -1,0 +1,74 @@
+{
+  "template_id": "tpl_construction_rdo_v1",
+  "version": "1.0.0",
+  "name": "RDO de Obra (Diário de Construção)",
+  "short_name": "RDO de Obra",
+  "category": "ENGINEERING",
+  "icon_name": "assignment_turned_in_rounded",
+  "accent_color": "#10B981",
+  "is_builtin": true,
+  "is_pinned_to_home": false,
+  "sort_order": 7,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "asset_path": "assets/rdo-obra.png",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "group_tags_label": "Frente de Serviço",
+    "group_tags": [
+      "Canteiro",
+      "Terraplenagem",
+      "Armação / Concretagem",
+      "Alvenaria e Vedação",
+      "Instalações",
+      "Acabamento"
+    ],
+    "status_tags_label": "Andamento da Frente",
+    "status_tags": [
+      "Em Execução",
+      "Concluído na Etapa",
+      "Pendente",
+      "Não Conforme",
+      "Aprovado"
+    ],
+    "guided_shots": [
+      "Visão panorâmica geral do canteiro no início do turno",
+      "Frente de serviço crítica do dia com equipe em atividade",
+      "Conferência de armação ou concretagem concluída",
+      "Materiais recebidos descarregados no pátio",
+      "Condições climáticas / proteção coletiva e EPIs"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "rdo_day_number",
+      "label": "Dia do RDO / Edição",
+      "type": "NUMBER",
+      "placeholder": "Ex: 45"
+    },
+    {
+      "key": "weather_shift",
+      "label": "Tempo / Clima do Dia",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "Bom / Sol",
+        "Nublado",
+        "Chuva Leve (Praticável)",
+        "Chuva Forte (Impraticável)"
+      ]
+    }
+  ],
+  "capture_fields_schema": [],
+  "actors_signature_schema": [
+    {
+      "role": "SITE_ENGINEER",
+      "label": "Engenheiro Residente",
+      "required": true
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "TIMELINE",
+    "generate_budget_csv": false,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1767225600000
+}

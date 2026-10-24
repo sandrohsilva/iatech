@@ -1,0 +1,107 @@
+{
+  "template_id": "tpl_engineering_lf_v1",
+  "version": "1.0.0",
+  "name": "Levantamento de Campo & Perícia (LF)",
+  "short_name": "LF, BM & Engenharia",
+  "category": "ENGINEERING",
+  "icon_name": "engineering_rounded",
+  "accent_color": "#F59E0B",
+  "is_builtin": true,
+  "is_pinned_to_home": true,
+  "sort_order": 2,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "asset_path": "assets/engenheiro-vistoria.png",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Subsistema da Planta / Obra",
+    "group_tags": [
+      "Fundação",
+      "Estrutura",
+      "Alvenaria",
+      "Fachada",
+      "Cobertura",
+      "Instalações Hidráulicas",
+      "Instalações Elétricas"
+    ],
+    "status_tags_label": "Severidade da Patologia",
+    "status_tags": [
+      "Crítico",
+      "Patologia Grave",
+      "Fissura / Trinca",
+      "Atenção",
+      "Aprovado"
+    ],
+    "guided_shots": [
+      "Visão panorâmica externa da estrutura / fachada",
+      "Placa de identificação do ativo / TAG de máquina",
+      "Ponto focal da patologia ou anomalia com régua / trena",
+      "Vista lateral de desaprumo ou flecha estrutural",
+      "Contexto do entorno e possíveis fontes causadoras"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "plant_unit",
+      "label": "Unidade / Setor da Planta",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: Planta 02 - Prédio de Caldeiras"
+    },
+    {
+      "key": "operational_condition",
+      "label": "Condição Operacional",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "Em Operação Normal",
+        "Parada Programada",
+        "Parada de Emergência",
+        "Em Construção"
+      ],
+      "placeholder": "Selecione a condição operacional"
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "equip_model",
+      "label": "TAG / Modelo do Equipamento",
+      "type": "TEXT",
+      "placeholder": "Ex: Bomba Centrífuga B-102"
+    },
+    {
+      "key": "observed_defect",
+      "label": "Possível Defeito / Patologia",
+      "type": "TEXT",
+      "placeholder": "Ex: Cavitação severa no rotor"
+    },
+    {
+      "key": "tech_question",
+      "label": "Dúvida Técnica p/ Engenharia",
+      "type": "TEXT",
+      "placeholder": "Ex: Verificar se suporte suporta vibração"
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "ENGINEER",
+      "label": "Engenheiro Responsável",
+      "required": true,
+      "require_doc": true,
+      "require_photo": false
+    },
+    {
+      "role": "FACILITY_MANAGER",
+      "label": "Responsável Local da Planta",
+      "required": false,
+      "require_doc": true,
+      "require_photo": false
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "ASSET_DATASHEET",
+    "generate_budget_csv": true,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1767225600000
+}

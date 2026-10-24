@@ -1,0 +1,78 @@
+{
+  "template_id": "tpl_non_conformity_v1",
+  "version": "1.0.0",
+  "name": "Não Conformidade / RNC (SST & Manutenção)",
+  "short_name": "Não Conformidade / RNC",
+  "category": "SAFETY_RNC",
+  "icon_name": "warning_amber_rounded",
+  "accent_color": "#F97316",
+  "is_builtin": true,
+  "is_pinned_to_home": false,
+  "sort_order": 8,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "asset_path": "assets/nao-conformidade.png",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "group_tags_label": "Setor da Ocorrência",
+    "group_tags": [
+      "Manutenção",
+      "Segurança (SST)",
+      "Qualidade",
+      "Limpeza/Facilities",
+      "Logística",
+      "TI/Infra"
+    ],
+    "status_tags_label": "Criticidade da RNC",
+    "status_tags": [
+      "Crítico (Parada)",
+      "Grave",
+      "Moderado",
+      "Observação / Melhoria"
+    ],
+    "guided_shots": [
+      "Panorâmica contextualizando a área ou máquina",
+      "Foto de detalhe da irregularidade ou risco iminente",
+      "Sinalização ou ausência de trava/EPI necessária",
+      "Ação de contenção imediata adotada no local"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "incident_type",
+      "label": "Tipo de Ocorrência",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "Segurança do Trabalho (Quase-Acidente)",
+        "Falha Mecânica / Operacional",
+        "Qualidade / Produto",
+        "Meio Ambiente / Vazamento"
+      ]
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "risk_level",
+      "label": "Nível de Risco Imediato",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "Baixo",
+        "Médio",
+        "Alto",
+        "Risco de Vida / Interdição"
+      ]
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "INSPECTOR",
+      "label": "Inspetor de Qualidade/SST",
+      "required": true
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "TIMELINE",
+    "generate_budget_csv": false,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1767225600000
+}

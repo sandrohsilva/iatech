@@ -1,0 +1,113 @@
+{
+  "template_id": "tpl_safety_fire_avcb_v1",
+  "version": "1.1.0",
+  "name": "Extintores & Hidrantes (AVCB)",
+  "short_name": "Incêndio / AVCB",
+  "category": "SAFETY_FIRE",
+  "icon_name": "local_fire_department_rounded",
+  "accent_color": "#DC2626",
+  "is_builtin": false,
+  "is_pinned_to_home": false,
+  "sort_order": 10,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Equipamento Contra Incêndio",
+    "group_tags": [
+      "Extintor Pó ABC",
+      "Extintor CO2",
+      "Extintor Água",
+      "Abrigo de Hidrante",
+      "Mangueira / Esguicho",
+      "Luz de Emergência",
+      "Porta Corta-Fogo",
+      "Alarme de Incêndio"
+    ],
+    "status_tags_label": "Conformidade Técnica",
+    "status_tags": [
+      "Conforme / Aprovado",
+      "Carga Vencida",
+      "Manômetro Despressurizado",
+      "Lacre Rompido",
+      "Sem Acesso / Obstruído"
+    ],
+    "guided_shots": [
+      "1. Visão frontal do extintor e sinalização de parede",
+      "2. Manômetro de pressão (ponteiro na faixa verde)",
+      "3. Lacre de segurança e anel de garantia",
+      "4. Etiqueta INMETRO e data da próxima recarga",
+      "5. Demarcação de solo desobstruída"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "building_name",
+      "label": "Nome da Edificação / Condomínio",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: Edifício Torre Sul"
+    },
+    {
+      "key": "avcb_number",
+      "label": "Número do Processo Bombeiros / AVCB",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "key": "inspector_technician",
+      "label": "Técnico em Segurança do Trabalho",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "conformity_verdict",
+      "label": "Parecer Técnico Global",
+      "type": "SELECT_DROPDOWN",
+      "required": true,
+      "options": [
+        "Aprovado sem Ressalvas",
+        "Aprovado com Pendências Leves",
+        "Reprovado / Risco Iminente"
+      ]
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "seal_number",
+      "label": "Número do Lacre",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "key": "validity_date",
+      "label": "Data de Vencimento",
+      "type": "TEXT",
+      "required": false,
+      "placeholder": "MM/AAAA"
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "INSPECTOR",
+      "label": "Técnico de Segurança",
+      "required": true,
+      "require_doc": true,
+      "require_photo": true
+    },
+    {
+      "role": "BUILDING_MANAGER",
+      "label": "Síndico / Gerente Predial",
+      "required": false,
+      "require_doc": true,
+      "require_photo": false
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "STANDARD",
+    "generate_budget_csv": true,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1792855350952
+}

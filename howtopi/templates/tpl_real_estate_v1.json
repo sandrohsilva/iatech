@@ -1,0 +1,115 @@
+{
+  "template_id": "tpl_real_estate_v1",
+  "version": "1.0.0",
+  "name": "Vistoria Imobiliária (Locação & Chaves)",
+  "short_name": "Vistoria de Imóveis",
+  "category": "REAL_ESTATE",
+  "icon_name": "home_work_rounded",
+  "accent_color": "#3B82F6",
+  "is_builtin": true,
+  "is_pinned_to_home": true,
+  "sort_order": 3,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "asset_path": "assets/vistoria-imobiliaria.png",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": true,
+    "group_tags_label": "Cômodo / Ambiente",
+    "group_tags": [
+      "Fachada Externa",
+      "Sala",
+      "Cozinha",
+      "Quarto 1",
+      "Quarto 2",
+      "Banheiro",
+      "Varanda / Área de Serviço",
+      "Piso e Azulejos",
+      "Esquadrias e Janelas"
+    ],
+    "status_tags_label": "Estado de Conservação",
+    "status_tags": [
+      "Novo / Impecável",
+      "Bom Estado",
+      "Desgaste Natural",
+      "Necessita Reparo",
+      "Danificado"
+    ],
+    "guided_shots": [
+      "Fachada do imóvel e número predial",
+      "Quadro de energia e disjuntores",
+      "Medidor de água / gás com leitura inicial",
+      "Visão panorâmica da Sala e pisos",
+      "Cozinha: bancada, pias e torneiras",
+      "Banheiro: louças, metais e box",
+      "Quartos: portas, janelas e pintura",
+      "Conjunto de chaves entregues"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "property_address",
+      "label": "Endereço Completo do Imóvel",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: Rua das Flores, 123 - Apto 42"
+    },
+    {
+      "key": "survey_type",
+      "label": "Tipo de Vistoria",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "Entrada (Início de Locação)",
+        "Saída (Entrega de Chaves)",
+        "Constatação / Reforma"
+      ],
+      "placeholder": "Selecione o tipo de vistoria"
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "item_name",
+      "label": "Item Vistoriado",
+      "type": "TEXT",
+      "placeholder": "Ex: Pintura da parede, Cuba da pia"
+    },
+    {
+      "key": "item_conservation",
+      "label": "Estado do Item",
+      "type": "SELECT_DROPDOWN",
+      "options": [
+        "Novo",
+        "Bom",
+        "Desgaste Natural",
+        "Avariado",
+        "Trocar"
+      ]
+    },
+    {
+      "key": "wear_note",
+      "label": "Detalhe do Desgaste / Reparo",
+      "type": "TEXT",
+      "placeholder": "Ex: Manchas de umidade próximo ao teto"
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "SURVEYOR",
+      "label": "Vistoriador / Imobiliária",
+      "required": true,
+      "require_doc": true
+    },
+    {
+      "role": "TENANT",
+      "label": "Locatário / Inquilino",
+      "required": true,
+      "require_doc": true
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "TIMELINE",
+    "generate_budget_csv": false,
+    "desktop_workflow_optimized": false
+  },
+  "installed_at": 1767225600000
+}

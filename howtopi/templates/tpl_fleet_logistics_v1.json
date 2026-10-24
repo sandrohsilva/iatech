@@ -1,0 +1,117 @@
+{
+  "template_id": "tpl_fleet_logistics_v1",
+  "version": "1.3.0",
+  "name": "Checklist de Frotas & Caminhões",
+  "short_name": "Frotas & Cargas",
+  "category": "FLEET_LOGISTICS",
+  "icon_name": "local_shipping_rounded",
+  "accent_color": "#EA580C",
+  "is_builtin": false,
+  "is_pinned_to_home": false,
+  "sort_order": 13,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Setor do Veículo / Conjunto",
+    "group_tags": [
+      "Cabine / Painel",
+      "Pneus Dianteiros",
+      "Pneus Traseiros / Estepe",
+      "Baú / Carreta / Lacre",
+      "Quinta Roda / Engate",
+      "Tacógrafo",
+      "Iluminação / Faróis"
+    ],
+    "status_tags_label": "Status da Vistoria",
+    "status_tags": [
+      "Conforme / Aprovado",
+      "Desgaste Natural",
+      "Avaria Nova",
+      "Lacre Violado",
+      "Reprovado para Viagem"
+    ],
+    "guided_shots": [
+      "1. Frente com placa visível e hodômetro no painel",
+      "2. Lacre do baú ou trava de segurança da carga",
+      "3. Sulco dos pneus principais e estepe",
+      "4. Nível de óleo e fluido de arrefecimento",
+      "5. Disco do tacógrafo e CNH do motorista"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "truck_plate",
+      "label": "Placa do Cavalo Mecânico",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "trailer_plate",
+      "label": "Placa da Carreta / Semirreboque",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "key": "driver_name",
+      "label": "Nome do Motorista",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "current_odometer",
+      "label": "Quilometragem Atual (KM)",
+      "type": "NUMBER",
+      "required": true
+    },
+    {
+      "key": "trip_type",
+      "label": "Tipo de Viagem",
+      "type": "SELECT_DROPDOWN",
+      "required": true,
+      "options": [
+        "Saída para Entrega",
+        "Retorno de Rota",
+        "Transferência de Filial",
+        "Manutenção Periódica"
+      ]
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "seal_code",
+      "label": "Código do Lacre",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "key": "tire_tread_mm",
+      "label": "Sulco do Pneu (mm)",
+      "type": "NUMBER",
+      "required": false
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "FLEET_MANAGER",
+      "label": "Inspetor de Frota",
+      "required": true,
+      "require_doc": true,
+      "require_photo": true
+    },
+    {
+      "role": "DRIVER",
+      "label": "Motorista",
+      "required": true,
+      "require_doc": true,
+      "require_photo": false
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "STANDARD",
+    "generate_budget_csv": true,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1792855350952
+}

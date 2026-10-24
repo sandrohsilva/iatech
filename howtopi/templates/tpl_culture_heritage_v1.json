@@ -1,0 +1,113 @@
+{
+  "template_id": "tpl_culture_heritage_v1",
+  "version": "1.0.0",
+  "name": "Restauração de Obras de Arte & Museus",
+  "short_name": "Artes & Restauro",
+  "category": "CULTURE_HERITAGE",
+  "icon_name": "palette_rounded",
+  "accent_color": "#9333EA",
+  "is_builtin": false,
+  "is_pinned_to_home": false,
+  "sort_order": 12,
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": true,
+    "group_tags_label": "Área da Obra",
+    "group_tags": [
+      "Camada Pictórica",
+      "Suporte / Tela / Madeira",
+      "Moldura / Chassi",
+      "Verniz / Acabamento",
+      "Verso da Obra",
+      "Inscrição / Assinatura"
+    ],
+    "status_tags_label": "Patologia Detectada",
+    "status_tags": [
+      "Estável",
+      "Craquelura Ativa",
+      "Desprendimento de Pigmento",
+      "Ataque Biológico / Cupins",
+      "Oxidação de Verniz"
+    ],
+    "guided_shots": [
+      "1. Foto macro da assinatura e data do artista",
+      "2. Registro ortogonal frontal sob luz difusa",
+      "3. Detalhes de craqueluras ou perda de tinta sob luz rasante",
+      "4. Estado estrutural do chassi e verso",
+      "5. Exame com luz UV / fluorescência"
+    ]
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "artwork_title",
+      "label": "Título da Obra",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "artist_author",
+      "label": "Artista / Escola",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "technique_medium",
+      "label": "Técnica / Materiais",
+      "type": "TEXT",
+      "required": true,
+      "placeholder": "Ex: Óleo sobre tela"
+    },
+    {
+      "key": "dimensions_cm",
+      "label": "Dimensões (A x L cm)",
+      "type": "TEXT",
+      "required": false,
+      "placeholder": "Ex: 120 x 80 cm"
+    },
+    {
+      "key": "conservation_state",
+      "label": "Estado Geral de Conservação",
+      "type": "SELECT_DROPDOWN",
+      "required": true,
+      "options": [
+        "Excelente",
+        "Bom",
+        "Regular (Exige Limpeza)",
+        "Grave (Risco de Perda)"
+      ]
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "quadrant",
+      "label": "Quadrante da Obra",
+      "type": "TEXT",
+      "required": false,
+      "placeholder": "Ex: Superior Direito"
+    }
+  ],
+  "actors_signature_schema": [
+    {
+      "role": "RESTORER",
+      "label": "Restaurador Responsável",
+      "required": true,
+      "require_doc": true,
+      "require_photo": true
+    },
+    {
+      "role": "CURATOR",
+      "label": "Curador / Proprietário",
+      "required": false,
+      "require_doc": false,
+      "require_photo": false
+    }
+  ],
+  "export_config": {
+    "pdf_layout_engine": "STANDARD",
+    "generate_budget_csv": false,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1792855350952
+}
