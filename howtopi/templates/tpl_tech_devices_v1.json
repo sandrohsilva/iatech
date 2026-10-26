@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "name": "Assistência Técnica de Smartphones & TI",
   "short_name": "Assistência TI",
-  "category": "TECH_REPAIR",
+  "category": "TECH",
   "icon_name": "devices_other_rounded",
-  "accent_color": "#0284C7",
+  "accent_color": "#0284c7",
   "is_builtin": false,
   "is_pinned_to_home": false,
   "sort_order": 14,
   "default_entry_mode": "PROJECT_OR_STANDALONE",
   "camera_hud_config": {
-    "enable_location_tag": false,
+    "enable_location_tag": true,
     "require_gps_compass": false,
     "enable_before_after_overlay": false,
     "group_tags_label": "Parte do Aparelho",
+    "status_tags_label": "Avaria na Entrada",
     "group_tags": [
       "Tela / Display",
       "Tampa Traseira",
@@ -23,7 +24,6 @@
       "Conector de Carga",
       "Acessórios Entregues"
     ],
-    "status_tags_label": "Avaria na Entrada",
     "status_tags": [
       "Intacto / Sem Riscos",
       "Riscos Leves",
@@ -100,5 +100,6 @@
     "generate_budget_csv": true,
     "desktop_workflow_optimized": true
   },
-  "installed_at": 1792855350952
+  "installed_at": 1792855350952,
+  "description": ""
 }

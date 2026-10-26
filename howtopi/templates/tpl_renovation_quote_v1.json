@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "name": "Orçamento & Reparos (Antes/Depois)",
   "short_name": "Reforma & Orçamento",
-  "category": "REPAIRS",
+  "category": "GENERAL",
   "icon_name": "format_paint_rounded",
-  "accent_color": "#EC4899",
+  "accent_color": "#ec4899",
   "is_builtin": true,
   "is_pinned_to_home": true,
   "sort_order": 4,
@@ -14,8 +14,9 @@
   "camera_hud_config": {
     "enable_location_tag": true,
     "require_gps_compass": false,
-    "enable_before_after_overlay": true,
+    "enable_before_after_overlay": false,
     "group_tags_label": "Ambiente / Sistema",
+    "status_tags_label": "Etapa do Reparo",
     "group_tags": [
       "Fachada",
       "Sala/Quarto",
@@ -24,7 +25,6 @@
       "Pintura",
       "Piso/Revestimento"
     ],
-    "status_tags_label": "Etapa do Reparo",
     "status_tags": [
       "Para Orçar (Antes)",
       "Dano Pré-Existente",
@@ -99,5 +99,6 @@
     "generate_budget_csv": true,
     "desktop_workflow_optimized": true
   },
-  "installed_at": 1767225600000
+  "installed_at": 1767225600000,
+  "description": ""
 }

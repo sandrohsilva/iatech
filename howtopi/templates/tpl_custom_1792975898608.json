@@ -1,0 +1,29 @@
+{
+  "template_id": "tpl_custom_1792975898608",
+  "version": "1.0.0",
+  "name": "Levantamento de Campo",
+  "short_name": "lf_union",
+  "category": "Engenharia",
+  "icon_name": "assignment",
+  "accent_color": "#0284c7",
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Etapas",
+    "group_tags": [],
+    "status_tags_label": "Status",
+    "status_tags": [],
+    "guided_shots": []
+  },
+  "inspection_fields_schema": [],
+  "capture_fields_schema": [],
+  "actors_signature_schema": [],
+  "export_config": {
+    "pdf_layout_engine": "STANDARD",
+    "generate_budget_csv": false,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1792975898608
+}

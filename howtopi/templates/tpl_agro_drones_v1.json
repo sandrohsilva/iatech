@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "name": "Drones & Pulverização Agrícola",
   "short_name": "Agro & Drones",
-  "category": "",
+  "category": "AGRO_TECH",
   "icon_name": "agriculture_rounded",
   "accent_color": "#16a34a",
   "is_builtin": false,
@@ -12,9 +12,10 @@
   "default_entry_mode": "PROJECT_OR_STANDALONE",
   "camera_hud_config": {
     "enable_location_tag": true,
-    "require_gps_compass": true,
+    "require_gps_compass": false,
     "enable_before_after_overlay": false,
     "group_tags_label": "Componente do Drone / Aeronave",
+    "status_tags_label": "Estado de Conservação",
     "group_tags": [
       "Hélices / Motores",
       "Tanque de Calda",
@@ -23,7 +24,6 @@
       "Sensores / Câmeras",
       "Bateria / Conectores"
     ],
-    "status_tags_label": "Estado de Conservação",
     "status_tags": [
       "Operacional / Perfeito",
       "Limpeza Necessária",

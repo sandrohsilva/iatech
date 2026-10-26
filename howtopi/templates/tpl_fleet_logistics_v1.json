@@ -3,9 +3,9 @@
   "version": "1.3.0",
   "name": "Checklist de Frotas & Caminhões",
   "short_name": "Frotas & Cargas",
-  "category": "FLEET_LOGISTICS",
+  "category": "AUTOMOTIVE",
   "icon_name": "local_shipping_rounded",
-  "accent_color": "#EA580C",
+  "accent_color": "#ea580c",
   "is_builtin": false,
   "is_pinned_to_home": false,
   "sort_order": 13,
@@ -15,6 +15,7 @@
     "require_gps_compass": false,
     "enable_before_after_overlay": false,
     "group_tags_label": "Setor do Veículo / Conjunto",
+    "status_tags_label": "Status da Vistoria",
     "group_tags": [
       "Cabine / Painel",
       "Pneus Dianteiros",
@@ -24,7 +25,6 @@
       "Tacógrafo",
       "Iluminação / Faróis"
     ],
-    "status_tags_label": "Status da Vistoria",
     "status_tags": [
       "Conforme / Aprovado",
       "Desgaste Natural",
@@ -113,5 +113,6 @@
     "generate_budget_csv": true,
     "desktop_workflow_optimized": true
   },
-  "installed_at": 1792855350952
+  "installed_at": 1792855350952,
+  "description": ""
 }
