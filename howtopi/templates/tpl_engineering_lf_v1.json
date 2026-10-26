@@ -1,7 +1,7 @@
 {
   "template_id": "tpl_engineering_lf_v1",
   "version": "1.0.0",
-  "name": "Levantamento de Campo & Perícia (LF)",
+  "name": "Levantamento de Campo ",
   "short_name": "LF, BM & Engenharia",
   "category": "ENGINEERING",
   "icon_name": "engineering_rounded",
@@ -33,13 +33,7 @@
       "Atenção",
       "Aprovado"
     ],
-    "guided_shots": [
-      "Visão panorâmica externa da estrutura / fachada",
-      "Placa de identificação do ativo / TAG de máquina",
-      "Ponto focal da patologia ou anomalia com régua / trena",
-      "Vista lateral de desaprumo ou flecha estrutural",
-      "Contexto do entorno e possíveis fontes causadoras"
-    ]
+    "guided_shots": []
   },
   "inspection_fields_schema": [
     {

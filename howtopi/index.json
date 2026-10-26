@@ -1,22 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": 1792976105973,
+  "generated_at": 1792977041910,
   "publisher": "IATec HowtoPi Desktop",
-  "templates_count": 15,
+  "templates_count": 14,
   "templates": [
-    {
-      "id": "tpl_custom_1792975898608",
-      "name": "Levantamento de Campo",
-      "short_name": "lf_union",
-      "category": "Engenharia",
-      "description": "Levantamento de Campo",
-      "version": "1.0.0",
-      "icon_name": "assignment",
-      "accent_color": "#0284c7",
-      "file": "templates/tpl_custom_1792975898608.json",
-      "size_bytes": 810,
-      "requires_pro": true
-    },
     {
       "id": "tpl_agro_drones_v1",
       "name": "Drones & Pulverização Agrícola",
@@ -32,15 +19,15 @@
     },
     {
       "id": "tpl_auto_mechanic_v1",
-      "name": "Oficina Mecânica & Checklist Auto",
+      "name": "Oficina Mecânica & Checklist Teste",
       "short_name": "Oficina Mecânica",
       "category": "REPAIRS",
-      "description": "Oficina Mecânica & Checklist Auto",
+      "description": "Oficina Mecânica & Checklist Teste",
       "version": "1.0.0",
       "icon_name": "build_circle_rounded",
       "accent_color": "#6366F1",
       "file": "templates/tpl_auto_mechanic_v1.json",
-      "size_bytes": 2635,
+      "size_bytes": 2636,
       "requires_pro": true
     },
     {
@@ -71,15 +58,15 @@
     },
     {
       "id": "tpl_engineering_lf_v1",
-      "name": "Levantamento de Campo & Perícia (LF)",
+      "name": "Levantamento de Campo ",
       "short_name": "LF, BM & Engenharia",
       "category": "ENGINEERING",
-      "description": "Levantamento de Campo & Perícia (LF)",
+      "description": "Levantamento de Campo ",
       "version": "1.0.0",
       "icon_name": "engineering_rounded",
       "accent_color": "#F59E0B",
       "file": "templates/tpl_engineering_lf_v1.json",
-      "size_bytes": 2966,
+      "size_bytes": 2645,
       "requires_pro": true
     },
     {
