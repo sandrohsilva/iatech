@@ -1,7 +1,7 @@
 {
   "template_id": "tpl_auto_mechanic_v1",
   "version": "1.0.0",
-  "name": "Oficina Mecânica & Checklist Auto",
+  "name": "Oficina Mecânica & Checklist",
   "short_name": "Oficina Mecânica",
   "category": "REPAIRS",
   "icon_name": "build_circle_rounded",
