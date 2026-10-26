@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Assistência Técnica de Smartphones & TI",
   "short_name": "Assistência TI",
-  "category": "TECH",
+  "category": "NON_CONFORMITY",
   "icon_name": "devices_other_rounded",
   "accent_color": "#0284c7",
   "is_builtin": false,

@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "name": "Extintores & Hidrantes (AVCB)",
   "short_name": "Incêndio / AVCB",
-  "category": "SAFETY_FIRE",
+  "category": "NON_CONFORMITY",
   "icon_name": "local_fire_department_rounded",
   "accent_color": "#DC2626",
   "is_builtin": false,

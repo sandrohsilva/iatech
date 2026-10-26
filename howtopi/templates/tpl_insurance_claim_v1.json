@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Regulação de Sinistro & Seguradora",
   "short_name": "Regulação de Sinistro",
-  "category": "INSURANCE",
+  "category": "INSURANCE_CLAIM",
   "icon_name": "shield_rounded",
   "accent_color": "#8B5CF6",
   "is_builtin": true,

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Energia Solar & Inversores",
   "short_name": "Solar / Inversor",
-  "category": "ENERGY",
+  "category": "ENGINEERING",
   "icon_name": "solar_power_rounded",
   "accent_color": "#F59E0B",
   "is_builtin": false,

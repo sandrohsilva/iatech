@@ -3,7 +3,7 @@
   "version": "1.3.0",
   "name": "Checklist de Frotas & Caminhões",
   "short_name": "Frotas & Cargas",
-  "category": "AUTOMOTIVE",
+  "category": "AUTO_MECHANIC",
   "icon_name": "local_shipping_rounded",
   "accent_color": "#ea580c",
   "is_builtin": false,

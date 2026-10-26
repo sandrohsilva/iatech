@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Oficina Mecânica & Checklist Teste",
   "short_name": "Oficina Mecânica",
-  "category": "REPAIRS",
+  "category": "AUTO_MECHANIC",
   "icon_name": "build_circle_rounded",
   "accent_color": "#6366F1",
   "is_builtin": true,

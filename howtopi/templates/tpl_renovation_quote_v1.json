@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Orçamento & Reparos (Antes/Depois)",
   "short_name": "Reforma & Orçamento",
-  "category": "GENERAL",
+  "category": "RENOVATION_QUOTE",
   "icon_name": "format_paint_rounded",
   "accent_color": "#ec4899",
   "is_builtin": true,

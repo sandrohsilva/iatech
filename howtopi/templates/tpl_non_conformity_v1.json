@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Não Conformidade / RNC (SST & Manutenção)",
   "short_name": "Não Conformidade / RNC",
-  "category": "GENERAL",
+  "category": "NON_CONFORMITY",
   "icon_name": "warning_amber_rounded",
   "accent_color": "#f97316",
   "is_builtin": true,

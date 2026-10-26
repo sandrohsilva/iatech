@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Acidente de Trânsito (B.O. / Sinistro)",
   "short_name": "Colisão / Trânsito",
-  "category": "TRAFFIC",
+  "category": "TRAFFIC_ACCIDENT",
   "icon_name": "car_crash_rounded",
   "accent_color": "#EF4444",
   "is_builtin": true,

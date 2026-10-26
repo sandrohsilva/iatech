@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Restauração de Obras de Arte & Museus",
   "short_name": "Artes & Restauro",
-  "category": "CULTURE_HERITAGE",
+  "category": "ENGINEERING",
   "icon_name": "palette_rounded",
   "accent_color": "#9333EA",
   "is_builtin": false,

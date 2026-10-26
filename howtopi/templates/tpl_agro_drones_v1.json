@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "name": "Drones & Pulverização Agrícola",
   "short_name": "Agro & Drones",
-  "category": "AGRO_TECH",
+  "category": "ENGINEERING",
   "icon_name": "agriculture_rounded",
   "accent_color": "#16a34a",
   "is_builtin": false,
