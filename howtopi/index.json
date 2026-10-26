@@ -1,9 +1,22 @@
 {
   "version": "1.0.0",
-  "generated_at": 1792977041910,
+  "generated_at": 1792979153564,
   "publisher": "IATec HowtoPi Desktop",
-  "templates_count": 14,
+  "templates_count": 15,
   "templates": [
+    {
+      "id": "tpl_custom_1792978805633",
+      "name": "LF Union Simplificado",
+      "short_name": "Novo Modelo",
+      "category": "Engenharia",
+      "description": "LF Union Simplificado",
+      "version": "1.0.0",
+      "icon_name": "assignment",
+      "accent_color": "#0284c7",
+      "file": "templates/tpl_custom_1792978805633.json",
+      "size_bytes": 1375,
+      "requires_pro": true
+    },
     {
       "id": "tpl_agro_drones_v1",
       "name": "Drones & Pulverização Agrícola",

@@ -1,0 +1,62 @@
+{
+  "template_id": "tpl_custom_1792978805633",
+  "version": "1.0.0",
+  "name": "LF Union Simplificado",
+  "short_name": "Novo Modelo",
+  "category": "Engenharia",
+  "icon_name": "assignment",
+  "accent_color": "#0284c7",
+  "default_entry_mode": "PROJECT_OR_STANDALONE",
+  "camera_hud_config": {
+    "enable_location_tag": true,
+    "require_gps_compass": false,
+    "enable_before_after_overlay": false,
+    "group_tags_label": "Etapas",
+    "group_tags": [
+      "Panorâmica",
+      "Detalhe",
+      "Evidência"
+    ],
+    "status_tags_label": "Status",
+    "status_tags": [
+      "Conforme",
+      "Inconforme"
+    ],
+    "guided_shots": []
+  },
+  "inspection_fields_schema": [
+    {
+      "key": "planta",
+      "label": "PLanta/Site",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "unit",
+      "label": "Unidade/Processo",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "key": "setor",
+      "label": "Area/Setor",
+      "type": "TEXT",
+      "required": false
+    }
+  ],
+  "capture_fields_schema": [
+    {
+      "key": "tag_id",
+      "label": "TAG / Identificador",
+      "type": "TEXT",
+      "required": true
+    }
+  ],
+  "actors_signature_schema": [],
+  "export_config": {
+    "pdf_layout_engine": "STANDARD",
+    "generate_budget_csv": false,
+    "desktop_workflow_optimized": true
+  },
+  "installed_at": 1792978805633
+}

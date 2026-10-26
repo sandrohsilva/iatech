@@ -13,7 +13,7 @@
       "version": "1.0.0",
       "icon_name": "assignment",
       "accent_color": "#0284c7",
-      "file": "templates/tpl_custom_1792975898608.json",
+      "file": "tpl_custom_1792975898608.json",
       "size_bytes": 810,
       "requires_pro": true
     },
@@ -26,7 +26,7 @@
       "version": "1.2.0",
       "icon_name": "agriculture_rounded",
       "accent_color": "#16a34a",
-      "file": "templates/tpl_agro_drones_v1.json",
+      "file": "tpl_agro_drones_v1.json",
       "size_bytes": 3267,
       "requires_pro": true
     },
@@ -39,7 +39,7 @@
       "version": "1.0.0",
       "icon_name": "build_circle_rounded",
       "accent_color": "#6366F1",
-      "file": "templates/tpl_auto_mechanic_v1.json",
+      "file": "tpl_auto_mechanic_v1.json",
       "size_bytes": 2635,
       "requires_pro": true
     },
@@ -52,7 +52,7 @@
       "version": "1.0.0",
       "icon_name": "assignment_turned_in_rounded",
       "accent_color": "#10B981",
-      "file": "templates/tpl_construction_rdo_v1.json",
+      "file": "tpl_construction_rdo_v1.json",
       "size_bytes": 1991,
       "requires_pro": true
     },
@@ -65,7 +65,7 @@
       "version": "1.0.0",
       "icon_name": "palette_rounded",
       "accent_color": "#9333EA",
-      "file": "templates/tpl_culture_heritage_v1.json",
+      "file": "tpl_culture_heritage_v1.json",
       "size_bytes": 2909,
       "requires_pro": true
     },
@@ -78,7 +78,7 @@
       "version": "1.0.0",
       "icon_name": "engineering_rounded",
       "accent_color": "#F59E0B",
-      "file": "templates/tpl_engineering_lf_v1.json",
+      "file": "tpl_engineering_lf_v1.json",
       "size_bytes": 2966,
       "requires_pro": true
     },
@@ -91,7 +91,7 @@
       "version": "1.3.0",
       "icon_name": "local_shipping_rounded",
       "accent_color": "#ea580c",
-      "file": "templates/tpl_fleet_logistics_v1.json",
+      "file": "tpl_fleet_logistics_v1.json",
       "size_bytes": 2947,
       "requires_pro": true
     },
@@ -104,7 +104,7 @@
       "version": "1.0.0",
       "icon_name": "shield_rounded",
       "accent_color": "#8B5CF6",
-      "file": "templates/tpl_insurance_claim_v1.json",
+      "file": "tpl_insurance_claim_v1.json",
       "size_bytes": 2209,
       "requires_pro": true
     },
@@ -117,7 +117,7 @@
       "version": "1.0.0",
       "icon_name": "warning_amber_rounded",
       "accent_color": "#f97316",
-      "file": "templates/tpl_non_conformity_v1.json",
+      "file": "tpl_non_conformity_v1.json",
       "size_bytes": 2139,
       "requires_pro": true
     },
@@ -130,7 +130,7 @@
       "version": "1.0.0",
       "icon_name": "home_work_rounded",
       "accent_color": "#3B82F6",
-      "file": "templates/tpl_real_estate_v1.json",
+      "file": "tpl_real_estate_v1.json",
       "size_bytes": 3007,
       "requires_pro": true
     },
@@ -143,7 +143,7 @@
       "version": "1.0.0",
       "icon_name": "format_paint_rounded",
       "accent_color": "#ec4899",
-      "file": "templates/tpl_renovation_quote_v1.json",
+      "file": "tpl_renovation_quote_v1.json",
       "size_bytes": 2701,
       "requires_pro": true
     },
@@ -156,7 +156,7 @@
       "version": "1.1.0",
       "icon_name": "local_fire_department_rounded",
       "accent_color": "#DC2626",
-      "file": "templates/tpl_safety_fire_avcb_v1.json",
+      "file": "tpl_safety_fire_avcb_v1.json",
       "size_bytes": 2988,
       "requires_pro": true
     },
@@ -169,7 +169,7 @@
       "version": "1.0.0",
       "icon_name": "solar_power_rounded",
       "accent_color": "#F59E0B",
-      "file": "templates/tpl_solar_photovoltaic_v1.json",
+      "file": "tpl_solar_photovoltaic_v1.json",
       "size_bytes": 2819,
       "requires_pro": true
     },
@@ -182,7 +182,7 @@
       "version": "1.0.0",
       "icon_name": "devices_other_rounded",
       "accent_color": "#0284c7",
-      "file": "templates/tpl_tech_devices_v1.json",
+      "file": "tpl_tech_devices_v1.json",
       "size_bytes": 2680,
       "requires_pro": true
     },
@@ -195,7 +195,7 @@
       "version": "1.0.0",
       "icon_name": "car_crash_rounded",
       "accent_color": "#EF4444",
-      "file": "templates/tpl_traffic_accident_v1.json",
+      "file": "tpl_traffic_accident_v1.json",
       "size_bytes": 2690,
       "requires_pro": true
     }
