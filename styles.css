@@ -529,9 +529,17 @@ body.course-open {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .product-status {
@@ -592,6 +600,20 @@ body.course-open {
   background: #f59e0b;
   color: #000000;
   box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5);
+}
+
+.btn-product-playstore {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #f8fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-product-playstore:hover {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.35);
 }
 
 /* Contact Section (Email Obfuscation UI) */
