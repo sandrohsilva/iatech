@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>iATech Apps — Aplicativos de Produtividade</title>
+
+  <meta name="description"
+    content="Conheça os aplicativos de produtividade da iA Tech: Capitu Reader, Carro Dez, Drinks & Catering, HowtoPi, MonInvest e TimeCare Lite. Faça seu dia a dia mais produtivo e lucrativo!">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="iATech Apps — Produtividade e Eficiência">
+  <meta property="og:description"
+    content="Faça seu dia-a-dia produtivo e lucrativo com as soluções móveis e inteligentes da iA Tech.">
+  <meta property="og:image" content="../logo.webp">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/webp" href="../logo.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5LF766N');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4Q9MK1J0K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-B4Q9MK1J0K');
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 14px 28px;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Topo: Header com logo iATech */
+    .header-portal {
+      background: #ffffff;
+      padding: 22px 18px;
+      border-radius: 20px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .portal-logo-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 6px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+
+    .portal-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .portal-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0b2559;
+      line-height: 1.25;
+      letter-spacing: -0.4px;
+      margin-bottom: 6px;
+    }
+
+    .portal-subtitle {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #2563eb;
+    }
+
+    /* Lista de Apps */
+    .apps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Card de cada App */
+    .app-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .app-card:active {
+      transform: scale(0.99);
+    }
+
+    /* Destaque especial para TimeCare Lite */
+    .app-card.featured {
+      border: 1.5px solid #3b82f6;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
+      background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: -10px;
+      right: 14px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 9px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+    }
+
+    /* Topo do Card: Logo + Título + Função */
+    .app-card-top {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .app-logo-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    }
+
+    .app-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .app-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .app-name-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .app-name {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #0b2559;
+      line-height: 1.25;
+    }
+
+    .app-desc {
+      font-size: 0.85rem;
+      color: #475569;
+      line-height: 1.42;
+    }
+
+    /* Linha de Botões Baixar / Abrir */
+    .app-actions {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Botão Baixar (Google Play) */
+    .btn-download {
+      background: linear-gradient(135deg, #0b2559, #1e40af);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(11, 37, 89, 0.2);
+    }
+
+    .btn-download svg {
+      fill: currentColor;
+    }
+
+    /* Botão Abrir */
+    .btn-open {
+      background: #f1f5f9;
+      color: #0b2559;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-open:active {
+      background: #e2e8f0;
+    }
+
+    /* Rodapé com aviso seguro Google Play */
+    .footer {
+      text-align: center;
+      margin-top: 26px;
+      padding-top: 16px;
+      font-size: 0.78rem;
+      color: #64748b;
+    }
+
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #059669;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-weight: 600;
+      border: 1px solid #a7f3d0;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LF766N" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="container">
+    <!-- Topo da Página -->
+    <header class="header-portal">
+      <div class="portal-logo-box">
+        <img src="../logo.webp" alt="Logo iA Tech" class="portal-logo-img">
+      </div>
+      <h1 class="portal-title">iATech Apps de Produtividade para você</h1>
+      <p class="portal-subtitle">Faça seu dia-a-dia produtivo e lucrativo!</p>
+    </header>
+
+    <!-- Lista dos 6 Aplicativos -->
+    <main class="apps-list">
+
+      <!-- TimeCare Lite (Destaque ERP / Cereja do Bolo) -->
+      <article class="app-card featured">
+        <span class="featured-tag">Completo</span>
+        <div class="app-card-top">
+          <div class="app-logo-box">
+            <img src="../logos/timecare.png" alt="TimeCare Lite" class="app-logo-img">
+          </div>
+          <div class="app-info">
+            <div class="app-name-row">
+              <h2 class="app-name">TimeCare Lite</h2>
+            </div>
+            <p class="app-desc">
+              Produtividade total com agendamento, tarefas, vendas, serviços e financeiro. Um ERP completo na palma da mão!
+            </p>
+          </div>
+        </div>
+        <div class="app-actions">
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.timecare_lite" class="btn btn-download"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-.914c-.16-.44-.24-.916-.24-1.417V4.145c0-.5.08-.977.24-1.417.153-.42.36-.734.61-.914zM15.207 13.414l2.42 2.42-12.016 6.94 9.596-9.36zm0-2.828L5.61 1.226 17.627 8.166l-2.42 2.42zm1.414 1.414l2.87-2.87c.725-.42 1.258-.236 1.488.084.18.25.26.59.26.986s-.08.736-.26.986c-.23.32-.763.504-1.488.084l-2.87-2.87z"/>
+            </svg>
+            <span>Baixar o App</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.timecare_lite" class="btn btn-open"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Abrir o App</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- MonInvest -->
+      <article class="app-card">
+        <div class="app-card-top">
+          <div class="app-logo-box">
+            <img src="../logos/moninvest.png" alt="MonInvest" class="app-logo-img">
+          </div>
+          <div class="app-info">
+            <div class="app-name-row">
+              <h2 class="app-name">MonInvest</h2>
+            </div>
+            <p class="app-desc">
+              Análise inteligente de Ações, BDRs, FIIs e ETFs. Gestão de carteiras com independência e privacidade 100% Local-First.
+            </p>
+          </div>
+        </div>
+        <div class="app-actions">
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.moninvest" class="btn btn-download"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-.914c-.16-.44-.24-.916-.24-1.417V4.145c0-.5.08-.977.24-1.417.153-.42.36-.734.61-.914zM15.207 13.414l2.42 2.42-12.016 6.94 9.596-9.36zm0-2.828L5.61 1.226 17.627 8.166l-2.42 2.42zm1.414 1.414l2.87-2.87c.725-.42 1.258-.236 1.488.084.18.25.26.59.26.986s-.08.736-.26.986c-.23.32-.763.504-1.488.084l-2.87-2.87z"/>
+            </svg>
+            <span>Baixar o App</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.moninvest" class="btn btn-open"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Abrir o App</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- HowtoPi -->
+      <article class="app-card">
+        <div class="app-card-top">
+          <div class="app-logo-box">
+            <img src="../logos/howtopi.png" alt="HowtoPi" class="app-logo-img">
+          </div>
+          <div class="app-info">
+            <div class="app-name-row">
+              <h2 class="app-name">HowtoPi</h2>
+            </div>
+            <p class="app-desc">
+              Vistorias imobiliárias, perícias de sinistro, laudos de acidentes e diários de obra (RDO). 100% Offline-First.
+            </p>
+          </div>
+        </div>
+        <div class="app-actions">
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.howtopi" class="btn btn-download"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-.914c-.16-.44-.24-.916-.24-1.417V4.145c0-.5.08-.977.24-1.417.153-.42.36-.734.61-.914zM15.207 13.414l2.42 2.42-12.016 6.94 9.596-9.36zm0-2.828L5.61 1.226 17.627 8.166l-2.42 2.42zm1.414 1.414l2.87-2.87c.725-.42 1.258-.236 1.488.084.18.25.26.59.26.986s-.08.736-.26.986c-.23.32-.763.504-1.488.084l-2.87-2.87z"/>
+            </svg>
+            <span>Baixar o App</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.howtopi" class="btn btn-open"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Abrir o App</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Carro Dez -->
+      <article class="app-card">
+        <div class="app-card-top">
+          <div class="app-logo-box">
+            <img src="../logos/carro-dez.png" alt="Carro Dez" class="app-logo-img">
+          </div>
+          <div class="app-info">
+            <div class="app-name-row">
+              <h2 class="app-name">Carro Dez</h2>
+            </div>
+            <p class="app-desc">
+              Controle de despesas, manutenções e consumo para motoristas de aplicativos e gestão ágil de orçamentos para oficinas.
+            </p>
+          </div>
+        </div>
+        <div class="app-actions">
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.autodtc_pro" class="btn btn-download"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-.914c-.16-.44-.24-.916-.24-1.417V4.145c0-.5.08-.977.24-1.417.153-.42.36-.734.61-.914zM15.207 13.414l2.42 2.42-12.016 6.94 9.596-9.36zm0-2.828L5.61 1.226 17.627 8.166l-2.42 2.42zm1.414 1.414l2.87-2.87c.725-.42 1.258-.236 1.488.084.18.25.26.59.26.986s-.08.736-.26.986c-.23.32-.763.504-1.488.084l-2.87-2.87z"/>
+            </svg>
+            <span>Baixar o App</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.autodtc_pro" class="btn btn-open"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Abrir o App</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Drinks & Catering -->
+      <article class="app-card">
+        <div class="app-card-top">
+          <div class="app-logo-box">
+            <img src="../logos/drinks.png" alt="Drinks & Catering" class="app-logo-img">
+          </div>
+          <div class="app-info">
+            <div class="app-name-row">
+              <h2 class="app-name">Drinks & Catering</h2>
+            </div>
+            <p class="app-desc">
+              Gestão sob medida para bartenders, bares móveis e eventos: precificação exata de drinks e propostas comerciais impecáveis.
+            </p>
+          </div>
+        </div>
+        <div class="app-actions">
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.drinks" class="btn btn-download"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-.914c-.16-.44-.24-.916-.24-1.417V4.145c0-.5.08-.977.24-1.417.153-.42.36-.734.61-.914zM15.207 13.414l2.42 2.42-12.016 6.94 9.596-9.36zm0-2.828L5.61 1.226 17.627 8.166l-2.42 2.42zm1.414 1.414l2.87-2.87c.725-.42 1.258-.236 1.488.084.18.25.26.59.26.986s-.08.736-.26.986c-.23.32-.763.504-1.488.084l-2.87-2.87z"/>
+            </svg>
+            <span>Baixar o App</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.drinks" class="btn btn-open"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Abrir o App</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Capitu Reader -->
+      <article class="app-card">
+        <div class="app-card-top">
+          <div class="app-logo-box">
+            <img src="../logos/capitu-reader.png" alt="Capitu Reader" class="app-logo-img">
+          </div>
+          <div class="app-info">
+            <div class="app-name-row">
+              <h2 class="app-name">Capitu Reader</h2>
+            </div>
+            <p class="app-desc">
+              Leitor de Livros e PDF com narração de voz Piper, biblioteca com milhares de livros clássicos gratuitos e jogos integrados.
+            </p>
+          </div>
+        </div>
+        <div class="app-actions">
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.capitureader" class="btn btn-download"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-.914c-.16-.44-.24-.916-.24-1.417V4.145c0-.5.08-.977.24-1.417.153-.42.36-.734.61-.914zM15.207 13.414l2.42 2.42-12.016 6.94 9.596-9.36zm0-2.828L5.61 1.226 17.627 8.166l-2.42 2.42zm1.414 1.414l2.87-2.87c.725-.42 1.258-.236 1.488.084.18.25.26.59.26.986s-.08.736-.26.986c-.23.32-.763.504-1.488.084l-2.87-2.87z"/>
+            </svg>
+            <span>Baixar o App</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.iatech.capitureader" class="btn btn-open"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Abrir o App</span>
+          </a>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <div class="security-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <path d="m9 12 2 2 4-4"></path>
+        </svg>
+        <span>Aplicativos verificados na Google Play Store</span>
+      </div>
+      <p>&copy; 2026 iA Tech &bull; Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+
+</html>
+
